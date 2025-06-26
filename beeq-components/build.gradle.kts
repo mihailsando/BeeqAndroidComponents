@@ -58,30 +58,34 @@ android {
     }
 }
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            create<MavenPublication>("endavaRelease") {
-//                from(components["endavaRelease"])
-//                groupId = "com.endava"
-//                artifactId = "beeq-components-endava"
-//                version = "1.0.0"
-//            }
-//            create<MavenPublication>("EQRelease") {
-//                from(components["EQRelease"])
-//                groupId = "com.endava"
-//                artifactId = "beeq-components-EQ"
-//                version = "1.0.0"
-//            }
-//            create<MavenPublication>("beeqDefaultRelease") {
-//                from(components["beeqDefaultRelease"])
-//                groupId = "com.endava"
-//                artifactId = "beeq-components-default"
-//                version = "1.0.0"
-//            }
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("endavaRelease") {
+                from(components["endavaRelease"])
+                groupId = "com.endava"
+                artifactId = "beeq-components-endava"
+                version = "1.0.0"
+            }
+            create<MavenPublication>("EQRelease") {
+                from(components["EQRelease"])
+                groupId = "com.endava"
+                artifactId = "beeq-components-EQ"
+                version = "1.0.0"
+            }
+            create<MavenPublication>("beeqDefaultRelease") {
+                from(components["beeqDefaultRelease"])
+                groupId = "com.endava"
+                artifactId = "beeq-components-default"
+                version = "1.0.0"
+            }
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+}
 
 dependencies {
 
