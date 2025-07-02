@@ -3,7 +3,7 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#0C192F</color>
 
-    <color name="brand">#0C41C9</color>
+    <color name="brand">@color/bq_endava_orange_600</color>
     <color name="brand_light">#E7F0FD</color>
     <color name="brand_alt">#2E5FDD</color>
     <color name="brand_dark">#0D37A2</color>

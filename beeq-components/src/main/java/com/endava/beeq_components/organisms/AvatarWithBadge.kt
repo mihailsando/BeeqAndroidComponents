@@ -7,28 +7,32 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.endava.beeq_components.atoms.Avatar
 import com.endava.beeq_components.atoms.Badge
+import com.endava.beeq_components.theme.StandardDimensions
 
 @Composable
 fun AvatarWithBadge(
+    avatarModifier: Modifier = Modifier,
     imageUrl: String,
+    initials: String = "",
     badgeContent: String? = null,
-    modifier: Modifier = Modifier,
-    avatarSize: Dp = 48.dp,
-    badgeSize: Dp = 16.dp
+    avatarSize: StandardDimensions,
+    badgeSize: Dp = avatarSize.value / 3
 ) {
-    Box(modifier = modifier.size(avatarSize)) {
+    Box(modifier = Modifier) {
         Avatar(
+            modifier = avatarModifier
+                .size(avatarSize.value),
             imageUrl = imageUrl,
-            modifier = Modifier.matchParentSize()
+            initials = initials,
+            size = avatarSize,
         )
         badgeContent?.let {
             Badge(
                 content = it,
+                size = badgeSize,
                 modifier = Modifier
-                    .size(badgeSize)
                     .align(Alignment.TopEnd)
             )
         }
@@ -39,7 +43,10 @@ fun AvatarWithBadge(
 @Composable
 fun AvatarWithBadgePreview() {
     AvatarWithBadge(
+        avatarModifier = Modifier,
         imageUrl = "https://randomuser.me/api/portraits/men/32.jpg",
+        initials = "MS",
+        avatarSize = StandardDimensions.XXL,
         badgeContent = "3"
     )
 }
