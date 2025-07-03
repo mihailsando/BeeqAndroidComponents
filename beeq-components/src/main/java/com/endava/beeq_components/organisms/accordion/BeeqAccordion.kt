@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms
+package com.endava.beeq_components.organisms.accordion
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
@@ -16,10 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Expand
-import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -32,83 +29,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.atoms.Avatar
 import com.endava.beeq_components.theme.BrandColors
 import com.endava.beeq_components.theme.StandardDimensions
 import com.endava.beeq_components.theme.TextStyles
 import com.endava.beeq_components.util.withEnable
-
-enum class AccordionExpandIcon {
-    Chevron, Plus;
-
-    @Composable
-    fun ExpandIcon(expanded: Boolean, enabled: Boolean) = when (this) {
-        Plus -> {
-            Icon(
-                imageVector = if (expanded) Icons.Default.Remove else Icons.Default.Add,
-                contentDescription = if (expanded) "Collapse" else "Expand",
-                modifier = Modifier.size(20.dp),
-                tint = MaterialTheme.colorScheme.onSurface.withEnable(enabled)
-            )
-        }
-
-        Chevron -> {
-            Icon(
-                imageVector = Icons.Default.ExpandMore,
-                contentDescription = if (expanded) "Collapse" else "Expand",
-                modifier = Modifier
-                    .rotate(if (expanded) 180f else 0f)
-                    .size(20.dp),
-                tint = BrandColors.black.withEnable(enabled)
-            )
-        }
-    }
-}
-
-sealed class PrefixAccordionIcon {
-
-    abstract val content: (@Composable () -> Unit)?
-
-    class AvatarPrefix(
-        val initials: String,
-        val imageUrl: String?
-    ) : PrefixAccordionIcon() {
-        override val content: @Composable (() -> Unit)?
-            get() = {
-                Avatar(
-                    initials = initials,
-                    imageUrl = imageUrl,
-                    size = StandardDimensions.L
-                )
-            }
-    }
-
-    class ImagePrefix(
-        val imageVector: ImageVector
-    ) : PrefixAccordionIcon() {
-        override val content: @Composable (() -> Unit)?
-            get() = {
-                Icon(
-                    imageVector = imageVector,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .padding(end = 8.dp)
-                        .size(20.dp),
-                    tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-                )
-            }
-    }
-
-    class BlankPrefix() : PrefixAccordionIcon() {
-        override val content: @Composable (() -> Unit)? = null
-    }
-}
 
 @Composable
 fun BeeqAccordion(
