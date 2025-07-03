@@ -1,14 +1,19 @@
 package com.endava.beeq_components.organisms
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.endava.beeq_components.atoms.Avatar
 import com.endava.beeq_components.atoms.Badge
+import com.endava.beeq_components.theme.BrandColors
 import com.endava.beeq_components.theme.StandardDimensions
 
 @Composable
@@ -17,24 +22,32 @@ fun AvatarWithBadge(
     imageUrl: String,
     initials: String = "",
     badgeContent: String? = null,
-    avatarSize: StandardDimensions,
-    badgeSize: Dp = avatarSize.value / 3
+    avatarSize: StandardDimensions = StandardDimensions.L,
+    badgeSize: Dp = avatarSize.value / 4,
+    badgeColor: Color = BrandColors.danger
 ) {
+    val badgePaddingEnd: Dp = badgeContent?.length?.let { len ->
+        ((len - 2).coerceAtLeast(0) * 2.5f).dp
+    } ?: 0.dp
+
     Box(modifier = Modifier) {
-        Avatar(
-            modifier = avatarModifier
-                .size(avatarSize.value),
-            imageUrl = imageUrl,
-            initials = initials,
-            size = avatarSize,
-        )
-        badgeContent?.let {
-            Badge(
-                content = it,
-                size = badgeSize,
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
+        Row {
+            Avatar(
+                modifier = avatarModifier
+                    .size(avatarSize.value),
+                imageUrl = imageUrl,
+                initials = initials,
+                size = avatarSize,
             )
+            badgeContent?.let {
+                Badge(
+                    content = it,
+                    size = badgeSize,
+                    backgroundColor = badgeColor,
+                    modifier = Modifier
+                        .offset(x = (-avatarSize.value / 3 ), y = 0.dp)
+                )
+            }
         }
     }
 }
@@ -43,10 +56,10 @@ fun AvatarWithBadge(
 @Composable
 fun AvatarWithBadgePreview() {
     AvatarWithBadge(
-        avatarModifier = Modifier,
+        initials = "SS",
         imageUrl = "https://randomuser.me/api/portraits/men/32.jpg",
-        initials = "MS",
-        avatarSize = StandardDimensions.XXL,
-        badgeContent = "3"
+        badgeContent = "online",
+        avatarSize = StandardDimensions.XXL2,
+        badgeColor = BrandColors.success
     )
 }
