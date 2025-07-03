@@ -87,4 +87,7 @@ object BrandColors {
     val data_9: Color
         @Composable get() = colorResource(id = R.color.data_9)
 
+    val accordionBackground: Color
+        @Composable get() = colorResource(id = R.color.bq_grey_100)
+
 }

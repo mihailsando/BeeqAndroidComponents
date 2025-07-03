@@ -15,4 +15,13 @@ object TextStyles {
         letterSpacing = 0.em,
         fontFeatureSettings = "lnum, tnum"
     )
+
+    val AccordionText = TextStyle(
+        fontFamily = FontFamily.Default, // add font with  FontFamily(Font(resId = R.font.family))
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.em,
+        fontFeatureSettings = "lnum, tnum"
+    )
 }

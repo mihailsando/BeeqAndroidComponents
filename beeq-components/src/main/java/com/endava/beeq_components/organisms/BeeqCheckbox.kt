@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.semantics.Role
 import com.endava.beeq_components.theme.BrandColors
 import com.endava.beeq_components.theme.TextStyles
+import com.endava.beeq_components.util.withEnable
 
 enum class BeeqCheckboxState {
     CHECKED, UNCHECKED, MINUS, PLUS;
@@ -63,9 +64,7 @@ fun BeeqCheckbox(
         Text(
             text = title,
             style = TextStyles.CheckBoxText,
-            color = BrandColors.black.copy(
-                alpha = if (enabled) 1f else 0.3f
-            )
+            color = BrandColors.black.withEnable(enabled)
         )
     }
 }
@@ -77,7 +76,6 @@ private fun BeeqCheckboxPreview() {
             state = BeeqCheckboxState.CHECKED,
             onCheckedChange = {},
             enabled = false,
-            indeterminate = true,
             title = "Subscribe to newsletter sdjnasdlkajns dajsnd lkajsnd lakjsndlasjbdn lakjsb dlaksjb dlaksjd alsjbd laksj bdlasjb dlaskbd",
         )
 }
