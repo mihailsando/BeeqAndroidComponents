@@ -26,10 +26,6 @@ fun AvatarWithBadge(
     badgeSize: Dp = avatarSize.value / 4,
     badgeColor: Color = BrandColors.danger
 ) {
-    val badgePaddingEnd: Dp = badgeContent?.length?.let { len ->
-        ((len - 2).coerceAtLeast(0) * 2.5f).dp
-    } ?: 0.dp
-
     Box(modifier = Modifier) {
         Row {
             Avatar(

@@ -193,33 +193,6 @@ fun AlertBeeq(
     }
 }
 
-@Composable
-fun DescriptionWithLink(
-    description: String = "Description ",
-    linkText: String = "Link",
-    onLinkClick: () -> Unit
-) {
-    val annotatedText = buildAnnotatedString {
-        append(description)
-        pushStringAnnotation(tag = "URL", annotation = "internal_link") // tag arbitrar
-        withStyle(style = SpanStyle(color = Color(0xFF1A73E8), fontWeight = FontWeight.Medium)) {
-            append(linkText)
-        }
-        pop()
-    }
-
-    ClickableText(
-        text = annotatedText,
-        style = MaterialTheme.typography.bodyMedium.copy(color = Color.Black),
-        onClick = { offset ->
-            annotatedText.getStringAnnotations("URL", start = offset, end = offset)
-                .firstOrNull()?.let {
-                    onLinkClick()
-                }
-        }
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 private fun AlertInfoPreview() {
