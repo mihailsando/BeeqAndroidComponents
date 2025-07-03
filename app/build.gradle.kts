@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.endava.BeeqAndroidComponents"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -27,6 +27,20 @@ android {
             )
         }
     }
+    flavorDimensions += "branding"
+
+    productFlavors {
+        create("endava") {
+            dimension = "branding"
+        }
+        create("EQ") {
+            dimension = "branding"
+        }
+        create("beeqDefault") {
+            dimension = "branding"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

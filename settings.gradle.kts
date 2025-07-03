@@ -18,5 +18,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "BeeqAndroidComponents"
-include(":app")
+include(":app", ":beeq-components")
 include(":beeq-components")

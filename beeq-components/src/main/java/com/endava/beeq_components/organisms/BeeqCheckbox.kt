@@ -7,45 +7,65 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.molecules.CheckboxLabel
 import com.endava.beeq_components.atoms.BeeqCheckboxIcon
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.semantics.Role
+import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.TextStyles
+
+enum class BeeqCheckboxState {
+    CHECKED, UNCHECKED, MINUS, PLUS;
+
+    operator fun not(): BeeqCheckboxState = when (this) {
+        CHECKED -> UNCHECKED
+        UNCHECKED -> CHECKED
+        MINUS -> PLUS
+        PLUS -> MINUS
+    }
+
+}
 
 @Composable
 fun BeeqCheckbox(
-    checked: Boolean,
-    onCheckedChange: ((Boolean) -> Unit)?,
+    state: BeeqCheckboxState,
+    onCheckedChange: ((BeeqCheckboxState) -> Unit) = {},
     title: String,
-    description: String? = null,
-    indeterminate: Boolean = false,
     enabled: Boolean = true,
-    hasError: Boolean = false,
     modifier: Modifier = Modifier
 ) {
-    val toggleState = if (enabled && onCheckedChange != null) {
-        Modifier.clickable { onCheckedChange(!checked) }
-    } else Modifier
+    val state = remember { mutableStateOf(state) }
 
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .then(toggleState)
+            .clickable(
+                role = Role.Checkbox,
+                enabled = enabled,
+                onClick = {
+                    state.value = !state.value
+                    onCheckedChange(state.value)
+                }
+            )
             .padding(vertical = 8.dp),
-        verticalAlignment = Alignment.CenterVertically
     ) {
         BeeqCheckboxIcon(
-            checked = checked,
-            indeterminate = indeterminate,
-            enabled = enabled
+            state = state.value,
+            enabled = enabled,
         )
         Spacer(modifier = Modifier.width(12.dp))
-        CheckboxLabel(
-            title = title,
-            description = description,
-            hasError = hasError
+        Text(
+            text = title,
+            style = TextStyles.CheckBoxText,
+            color = BrandColors.black.copy(
+                alpha = if (enabled) 1f else 0.3f
+            )
         )
     }
 }
@@ -53,32 +73,11 @@ fun BeeqCheckbox(
 @Preview(showBackground = true)
 @Composable
 private fun BeeqCheckboxPreview() {
-    Column(modifier = Modifier.padding(16.dp)) {
-        BeeqCheckbox(
-            checked = true,
+   BeeqCheckbox(
+            state = BeeqCheckboxState.CHECKED,
             onCheckedChange = {},
-            title = "I agree to the terms"
+            enabled = false,
+            indeterminate = true,
+            title = "Subscribe to newsletter sdjnasdlkajns dajsnd lkajsnd lakjsndlasjbdn lakjsb dlaksjb dlaksjd alsjbd laksj bdlasjb dlaskbd",
         )
-        Spacer(modifier = Modifier.height(12.dp))
-        BeeqCheckbox(
-            checked = false,
-            onCheckedChange = {},
-            title = "Subscribe to newsletter",
-            description = "Receive monthly product updates."
-        )
-        Spacer(modifier = Modifier.height(12.dp))
-        BeeqCheckbox(
-            checked = false,
-            onCheckedChange = {},
-            title = "Accept license",
-            hasError = true
-        )
-        Spacer(modifier = Modifier.height(12.dp))
-        BeeqCheckbox(
-            checked = false,
-            onCheckedChange = null,
-            title = "Disabled option",
-            enabled = false
-        )
-    }
 }

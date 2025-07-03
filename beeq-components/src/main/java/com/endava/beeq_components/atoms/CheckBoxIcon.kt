@@ -15,25 +15,30 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.runtime.MutableState
+import com.endava.beeq_components.organisms.BeeqCheckboxState
 import com.endava.beeq_components.theme.BrandColors
 
 @Composable
 fun BeeqCheckboxIcon(
-    checked: Boolean,
-    indeterminate: Boolean,
+    state: BeeqCheckboxState,
     enabled: Boolean = true
 ) {
-    val icon = when {
-        indeterminate -> Icons.Default.Remove
-        checked -> Icons.Default.Check
-        else -> null
+    val icon = when(state) {
+        BeeqCheckboxState.MINUS -> Icons.Default.Remove
+        BeeqCheckboxState.PLUS -> Icons.Default.Add
+        BeeqCheckboxState.CHECKED -> Icons.Default.Check
+        BeeqCheckboxState.UNCHECKED -> null
     }
 
     Box(
         modifier = Modifier
             .size(20.dp)
             .background(
-                color = if (checked || indeterminate) BrandColors.brand
+                color = if (state != BeeqCheckboxState.UNCHECKED ) BrandColors.brand.copy(
+                    alpha = if (enabled) 1f else 0.3f
+                )
                 else MaterialTheme.colorScheme.surface,
                 shape = RoundedCornerShape(4.dp)
             )
@@ -43,7 +48,7 @@ fun BeeqCheckboxIcon(
                 else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f),
                 shape = RoundedCornerShape(4.dp)
             ),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         if (icon != null) {
             Icon(
