@@ -1,11 +1,16 @@
 package com.endava.beeq_components.organisms.button
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Preview
+import androidx.compose.material.icons.filled.Token
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -108,13 +113,117 @@ fun BeeqButton(
 @Composable
 @Preview(showBackground = true)
 private fun ButtonPreview() {
-    BeeqButton(
-        onClick = {},
-        text = "saasdasd",
-        buttonSize = ButtonSize.Small,
-        loading = false,
-        enabled = true,
-        startIcon = Icons.Default.Preview,
-        style = BeeqButtonStyle.Primary
-    )
+    Column {
+        Row {
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                startIcon = Icons.Default.Preview,
+                style = BeeqButtonStyle.Primary
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = true,
+                enabled = true,
+                startIcon = Icons.Default.Preview,
+                style = BeeqButtonStyle.Primary
+            )
+        }
+
+        Row {
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                startIcon = Icons.Default.DateRange,
+                endIcon = Icons.Default.Token,
+                style = BeeqButtonStyle.Danger
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = true,
+                enabled = true,
+                startIcon = Icons.Default.DateRange,
+                endIcon = Icons.Default.Token,
+                style = BeeqButtonStyle.Danger
+            )
+        }
+
+        Row {
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                startIcon = Icons.Default.DateRange,
+                endIcon = Icons.Default.Token,
+                style = BeeqButtonStyle.Secondary
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = true,
+                enabled = true,
+                startIcon = Icons.Default.DateRange,
+                endIcon = Icons.Default.Token,
+                style = BeeqButtonStyle.Secondary
+            )
+        }
+
+        Row {
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                endIcon = Icons.Default.Warning,
+                style = BeeqButtonStyle.Ghost
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = true,
+                enabled = true,
+                endIcon = Icons.Default.Warning,
+                style = BeeqButtonStyle.Ghost
+            )
+        }
+
+        Row {
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                style = BeeqButtonStyle.Text
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                onClick = {},
+                text = "saasdasd",
+                buttonSize = ButtonSize.Small,
+                loading = true,
+                enabled = true,
+                style = BeeqButtonStyle.Text
+            )
+        }
+    }
 }

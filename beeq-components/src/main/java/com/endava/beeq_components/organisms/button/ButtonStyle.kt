@@ -66,4 +66,17 @@ sealed class BeeqButtonStyle {
             @Composable
             get() = BorderStroke(1.dp, MaterialTheme.colorScheme.outline)
     }
+
+    data object Text : BeeqButtonStyle() {
+        override val colors
+            @Composable
+            get() = ButtonDefaults.outlinedButtonColors(
+                containerColor = Color.Transparent,
+                contentColor = MaterialTheme.colorScheme.onSurface
+            )
+
+        override val border
+            @Composable
+            get() = BorderStroke(1.dp, MaterialTheme.colorScheme.outline)
+    }
 }

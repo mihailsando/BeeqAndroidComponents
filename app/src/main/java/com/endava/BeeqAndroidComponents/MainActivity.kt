@@ -6,24 +6,28 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.endava.BeeqAndroidComponents.ui.AvatarScreen
 import com.endava.BeeqAndroidComponents.ui.theme.SampleappTheme
-import com.endava.beeq_components.organisms.AvatarWithBadge
-import com.endava.beeq_components.organisms.button.BeeqButton
-import com.endava.beeq_components.organisms.button.BeeqButtonStyle
-import com.endava.beeq_components.organisms.button.ButtonSize
-import com.endava.beeq_components.theme.BrandColors
-import com.endava.beeq_components.theme.StandardDimensions
-import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +37,6 @@ class MainActivity : ComponentActivity() {
             SampleappTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -42,32 +45,36 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+val allScreens = listOf<@Composable () -> Unit>(
+    { ButtonScreen() },
+    { AccordionScreen() },
+    { AvatarScreen() },
+
+
+    { Spacer(modifier = Modifier.padding(50.dp)) }
+)
+
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting( modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.padding(25.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
-        BeeqCheckbox(
-            state = BeeqCheckboxState.CHECKED,
-            onCheckedChange = {},
-            enabled = false,
-            indeterminate = true,
-            title = "Subscribe to newsletter sdjnasdlkajns dajsnd lkajsnd lakjsndlasjbdn lakjsb dlaksjb dlaksjd alsjbd laksj bdlasjb dlaskbd",
-        )
+        allScreens.forEach { screen ->
+            screen()
+        }
     }
 }
 
-private suspend fun suspendFun() {
-    delay(3000)
-    println()
-}
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     SampleappTheme {
-        Greeting("Android")
+        Greeting()
     }
 }

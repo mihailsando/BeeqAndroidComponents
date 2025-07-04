@@ -50,7 +50,7 @@ fun AvatarWithBadge(
 
 @Preview(showBackground = true)
 @Composable
-fun AvatarWithBadgePreview() {
+private fun AvatarWithBadgePreview() {
     AvatarWithBadge(
         initials = "SS",
         imageUrl = "https://randomuser.me/api/portraits/men/32.jpg",
