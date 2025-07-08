@@ -6,20 +6,22 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Adb
-import androidx.compose.material.icons.filled.DateRange
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Dangerous
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.MailOutline
-import androidx.compose.material.icons.filled.Preview
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.endava.beeq_components.organisms.button.BeeqButton
-import com.endava.beeq_components.organisms.button.BeeqButtonStyle
+import com.endava.beeq_components.organisms.button.BeeqButtonColors
+import com.endava.beeq_components.organisms.button.ButtonAction
 import com.endava.beeq_components.organisms.button.ButtonSize
+import com.endava.beeq_components.organisms.button.ButtonStyle
 import kotlinx.coroutines.delay
 
 @Composable
@@ -29,134 +31,211 @@ fun ButtonScreen() {
 
         Row {
             BeeqButton(
-                coroutineAction = {},
+                onClick = ButtonAction.CoroutineAction(
+                    onClick = { suspendFun() }
+                ),
                 text = "Primary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 startIcon = Icons.Default.Person,
-                style = BeeqButtonStyle.Primary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Primary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                onClick = {},
+                onClick = ButtonAction.OnClick(),
                 text = "Primary disable ",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
                 startIcon = Icons.Default.Person,
-                style = BeeqButtonStyle.Primary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Primary)
             )
         }
-
+        Spacer(Modifier.size(5.dp))
         Row {
             BeeqButton(
-                coroutineAction = {suspendFun()},
+                onClick = ButtonAction.CoroutineAction(
+                    onClick = { suspendFun() }
+                ),
                 text = "Danger",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.Search,
-                style = BeeqButtonStyle.Danger
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Danger)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                coroutineAction = {suspendFun()},
                 text = "Danger disable",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.Search,
-                style = BeeqButtonStyle.Danger
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Danger)
             )
         }
-
+        Spacer(Modifier.size(5.dp))
         Row {
             BeeqButton(
-                coroutineAction = {suspendFun()},
+                onClick = ButtonAction.CoroutineAction(
+                    onClick = { suspendFun() }
+                ),
                 text = "Secondary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.MailOutline,
-                style = BeeqButtonStyle.Secondary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Secondary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                coroutineAction = {suspendFun()},
                 text = "Secondary disable",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.MailOutline,
-                style = BeeqButtonStyle.Secondary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Secondary)
             )
         }
-
+        Spacer(Modifier.size(5.dp))
         Row {
             BeeqButton(
-                coroutineAction = {suspendFun()},
-                text = "Ghost",
+                onClick = ButtonAction.CoroutineAction(onClick = {}),
+                text = "GhostButton Primary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 endIcon = Icons.Default.Warning,
-                style = BeeqButtonStyle.Ghost
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Primary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                coroutineAction = {suspendFun()},
-                text = "Ghost disable",
+                text = "GhostButton Primary disable",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
                 endIcon = Icons.Default.Warning,
-                style = BeeqButtonStyle.Ghost
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Primary)
             )
         }
-
+        Spacer(Modifier.size(5.dp))
         Row {
             BeeqButton(
-                onClick = {},
-                text = "Text",
-                coroutineAction = {suspendFun()},
+                onClick = ButtonAction.CoroutineAction(
+                    onClick = { suspendFun() }
+                ),
+                text = "GhostButton Secondary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
-                style = BeeqButtonStyle.Text
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Secondary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                coroutineAction = {suspendFun()},
-                text = "Text",
+                text = "GhostButton Secondary disable",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
-                style = BeeqButtonStyle.Text
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Secondary)
             )
         }
-
+        Spacer(Modifier.size(5.dp))
         Row {
             BeeqButton(
-                onClick = {},
-                text = "",
-                coroutineAction = {suspendFun()},
+                onClick = ButtonAction.CoroutineAction(
+                    onClick = { suspendFun() }
+                ),
+                text = "Ghost Danger",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Danger)
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                text = "Ghost Danger disable",
+                buttonSize = ButtonSize.Small,
+                enabled = false,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Danger)
+            )
+        }
+        Spacer(Modifier.size(5.dp))
+        Row {
+            BeeqButton(
+                onClick = ButtonAction.CoroutineAction(
+                    onClick = { suspendFun() }
+                ),
+                text = "Ghost Success",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Success)
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                text = "Ghost Success disable",
+                buttonSize = ButtonSize.Small,
+                enabled = false,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Success)
+            )
+        }
+        Spacer(Modifier.size(5.dp))
+        Row {
+            BeeqButton(
+                onClick = ButtonAction.CoroutineAction(
+                    onClick = {
+                        errorSuspendFun()
+                    },
+                    onError = { t->
+
+                    }
+                ),
                 buttonSize = ButtonSize.Small,
                 startIcon = Icons.Default.Adb,
                 loading = false,
                 enabled = true,
-                style = BeeqButtonStyle.Text
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Primary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                coroutineAction = {suspendFun()},
-                text = "",
                 startIcon = Icons.Default.Adb,
                 buttonSize = ButtonSize.Small,
                 enabled = false,
-                style = BeeqButtonStyle.Text
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Primary)
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                startIcon = Icons.Default.Home,
+                buttonSize = ButtonSize.Small,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Primary)
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                startIcon = Icons.Default.Search,
+                buttonSize = ButtonSize.Small,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Secondary)
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                startIcon = Icons.Default.Check,
+                buttonSize = ButtonSize.Small,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Success)
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                startIcon = Icons.Default.Dangerous,
+                buttonSize = ButtonSize.Small,
+                enabled = false,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Danger)
             )
         }
     }
+}
+
+private suspend fun errorSuspendFun() {
+    delay(3000)
+    println()
+    throw Throwable("test error")
 }
 
 private suspend fun suspendFun() {

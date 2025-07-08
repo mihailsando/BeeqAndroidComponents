@@ -35,7 +35,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SampleappTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 30.dp)
+                ) { innerPadding ->
                     Greeting(
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -48,8 +52,8 @@ class MainActivity : ComponentActivity() {
 val allScreens = listOf<@Composable () -> Unit>(
     { ButtonScreen() },
     { AccordionScreen() },
+    { AlertInfoScreen() },
     { AvatarScreen() },
-
 
     { Spacer(modifier = Modifier.padding(50.dp)) }
 )

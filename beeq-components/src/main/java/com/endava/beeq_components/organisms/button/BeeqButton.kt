@@ -1,5 +1,6 @@
 package com.endava.beeq_components.organisms.button
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,17 +28,18 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.endava.beeq_components.theme.Colors
+import com.endava.beeq_components.util.withEnable
 import kotlinx.coroutines.launch
 
 @Composable
 fun BeeqButton(
-    onClick: () -> Unit = {},
-    coroutineAction: (suspend () -> Unit)? = null,
+    onClick: ButtonAction = ButtonAction.OnClick(),
     modifier: Modifier = Modifier,
-    text: String,
+    text: String = "",
     enabled: Boolean = true,
     buttonSize: ButtonSize = ButtonSize.Medium,
-    style: BeeqButtonStyle,
+    style: ButtonStyle,
     loading: Boolean = false,
     startIcon: ImageVector? = null,
     endIcon: ImageVector? = null,
@@ -49,22 +51,32 @@ fun BeeqButton(
 
     Button(
         onClick = {
-            onClick()
-            coroutineAction?.let { action ->
-                coroutineScope.launch {
-                    isLoading = true
-                    try {
-                        action()
-                    } finally {
-                        isLoading = false
+            when (onClick) {
+                is ButtonAction.OnClick -> onClick.onClick()
+                is ButtonAction.CoroutineAction -> {
+                    coroutineScope.launch {
+                        isLoading = true
+                        try {
+                            onClick.onClick()
+                        } catch (t: Throwable) {
+                            onClick.onError(t)
+                        } finally {
+                            isLoading = false
+                            onClick.onSuccess()
+                        }
                     }
                 }
             }
         },
         enabled = enabled && !effectiveLoading,
         modifier = modifier,
-        border = style.border,
         shape = RoundedCornerShape(8.dp),
+        border = style.borderStrokeColor?.let {
+            BorderStroke(
+                color = it.withEnable(enabled),
+                width = 2.dp
+            )
+        },
         contentPadding = buttonSize.contentPadding,
         colors = style.colors
     ) {
@@ -116,113 +128,133 @@ private fun ButtonPreview() {
     Column {
         Row {
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "Primary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 startIcon = Icons.Default.Preview,
-                style = BeeqButtonStyle.Primary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Primary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "Primary",
                 buttonSize = ButtonSize.Small,
                 loading = true,
                 enabled = true,
                 startIcon = Icons.Default.Preview,
-                style = BeeqButtonStyle.Primary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Primary)
             )
         }
 
         Row {
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "Secondary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.Token,
-                style = BeeqButtonStyle.Danger
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Secondary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "Secondary",
                 buttonSize = ButtonSize.Small,
                 loading = true,
                 enabled = true,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.Token,
-                style = BeeqButtonStyle.Danger
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Secondary)
             )
         }
 
         Row {
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "Danger",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.Token,
-                style = BeeqButtonStyle.Secondary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Danger)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "Danger",
                 buttonSize = ButtonSize.Small,
                 loading = true,
                 enabled = true,
                 startIcon = Icons.Default.DateRange,
                 endIcon = Icons.Default.Token,
-                style = BeeqButtonStyle.Secondary
+                style = ButtonStyle.NormalButton(BeeqButtonColors.Danger)
             )
         }
 
         Row {
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "GhostButton Primary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
                 endIcon = Icons.Default.Warning,
-                style = BeeqButtonStyle.Ghost
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Primary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "GhostButton Primary",
                 buttonSize = ButtonSize.Small,
                 loading = true,
                 enabled = true,
                 endIcon = Icons.Default.Warning,
-                style = BeeqButtonStyle.Ghost
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Primary)
             )
         }
 
         Row {
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "GhostButton Secondary",
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
-                style = BeeqButtonStyle.Text
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Secondary)
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                onClick = {},
-                text = "saasdasd",
+                onClick = ButtonAction.OnClick(),
+                text = "GhostButton Secondary",
                 buttonSize = ButtonSize.Small,
                 loading = true,
                 enabled = true,
-                style = BeeqButtonStyle.Text
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Secondary)
+            )
+        }
+
+        Row {
+            BeeqButton(
+                onClick = ButtonAction.OnClick(),
+                text = "GhostButton Success",
+                buttonSize = ButtonSize.Small,
+                loading = false,
+                enabled = true,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Success)
+            )
+            Spacer(Modifier.size(5.dp))
+            BeeqButton(
+                onClick = ButtonAction.OnClick(),
+                text = "GhostButton Success",
+                buttonSize = ButtonSize.Small,
+                loading = true,
+                enabled = true,
+                style = ButtonStyle.GhostButton(BeeqButtonColors.Success)
             )
         }
     }

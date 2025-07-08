@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -13,7 +12,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.endava.beeq_components.atoms.Avatar
 import com.endava.beeq_components.atoms.Badge
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.theme.StandardDimensions
 
 @Composable
@@ -24,7 +23,7 @@ fun AvatarWithBadge(
     badgeContent: String? = null,
     avatarSize: StandardDimensions = StandardDimensions.L,
     badgeSize: Dp = avatarSize.value / 4,
-    badgeColor: Color = BrandColors.danger
+    badgeColor: Color = UIColors.danger
 ) {
     Box(modifier = Modifier) {
         Row {
@@ -56,6 +55,6 @@ private fun AvatarWithBadgePreview() {
         imageUrl = "https://randomuser.me/api/portraits/men/32.jpg",
         badgeContent = "online",
         avatarSize = StandardDimensions.XXL2,
-        badgeColor = BrandColors.success
+        badgeColor = UIColors.success
     )
 }

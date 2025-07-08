@@ -15,7 +15,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.endava.beeq_components.atoms.BeeqCheckboxIcon
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.theme.TextStyles
 import com.endava.beeq_components.util.withEnable
 
@@ -62,7 +62,7 @@ fun BeeqCheckbox(
         Text(
             text = title,
             style = TextStyles.CheckBoxText,
-            color = BrandColors.black.withEnable(enabled)
+            color = UIColors.black.withEnable(enabled)
         )
     }
 }

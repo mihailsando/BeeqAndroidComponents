@@ -11,14 +11,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -28,15 +26,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.endava.beeq_components.R
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.theme.Radius
 import kotlinx.coroutines.delay
 
@@ -58,13 +53,13 @@ sealed interface AlertType {
             get() = R.drawable.info
         override val iconTint: Color
             @Composable
-            get() = BrandColors.brand
+            get() = UIColors.brand
         override val background: Color
             @Composable
-            get() = BrandColors.brand_light
+            get() = UIColors.brand_alt
         override val borderColor: Color
             @Composable
-            get() = BrandColors.brand
+            get() = UIColors.brand
     }
 
     data object Success : AlertType {
@@ -72,13 +67,13 @@ sealed interface AlertType {
             get() = R.drawable.success
         override val iconTint: Color
             @Composable
-            get() = BrandColors.success
+            get() = UIColors.success
         override val background: Color
             @Composable
-            get() = BrandColors.success_light
+            get() = UIColors.success_light
         override val borderColor: Color
             @Composable
-            get() = BrandColors.success
+            get() = UIColors.success
     }
 
     data object Warning : AlertType {
@@ -86,13 +81,13 @@ sealed interface AlertType {
             get() = R.drawable.warning
         override val iconTint: Color
             @Composable
-            get() = BrandColors.warning
+            get() = UIColors.warning
         override val background: Color
             @Composable
-            get() = BrandColors.warning_light
+            get() = UIColors.warning_alt
         override val borderColor: Color
             @Composable
-            get() = BrandColors.warning
+            get() = UIColors.warning
     }
 
     data object Error : AlertType {
@@ -100,13 +95,13 @@ sealed interface AlertType {
             get() = R.drawable.error
         override val iconTint: Color
             @Composable
-            get() = BrandColors.danger
+            get() = UIColors.danger
         override val background: Color
             @Composable
-            get() = BrandColors.danger_light
+            get() = UIColors.danger_alt
         override val borderColor: Color
             @Composable
-            get() = BrandColors.danger
+            get() = UIColors.danger
     }
 
     data object Message : AlertType {
@@ -114,13 +109,13 @@ sealed interface AlertType {
             get() = R.drawable.star
         override val iconTint: Color
             @Composable
-            get() = BrandColors.neutral_600
+            get() = UIColors.neutral_600
         override val background: Color
             @Composable
-            get() = BrandColors.white
+            get() = UIColors.white
         override val borderColor: Color
             @Composable
-            get() = BrandColors.neutral_600
+            get() = UIColors.neutral_600
     }
 }
 

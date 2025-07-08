@@ -33,7 +33,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.theme.StandardDimensions
 import com.endava.beeq_components.theme.TextStyles
 import com.endava.beeq_components.util.withEnable
@@ -45,7 +45,7 @@ fun BeeqAccordion(
     onSettingsClicked: (() -> Unit)? = null,
     prefixContent: PrefixAccordionIcon,
     accordionExpandIcon: AccordionExpandIcon = AccordionExpandIcon.Plus,
-    background: Color? = BrandColors.accordionBackground,
+    background: Color? = UIColors.accordionBackground,
     modifier: Modifier = Modifier,
     initiallyExpanded: Boolean = false,
     enabled: Boolean = true
@@ -77,7 +77,7 @@ fun BeeqAccordion(
 
             Text(
                 text = title,
-                color = BrandColors.black.withEnable(enabled),
+                color = UIColors.black.withEnable(enabled),
                 style = TextStyles.AccordionText,
                 modifier = Modifier
                     .padding(start = StandardDimensions.S.value)
@@ -95,7 +95,7 @@ fun BeeqAccordion(
                         }
                         .withEnable(enabled)
                         .size(20.dp),
-                    tint = BrandColors.black
+                    tint = UIColors.black
                 )
             }
 

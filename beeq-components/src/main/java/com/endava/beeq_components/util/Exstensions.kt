@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
+import com.endava.beeq_components.theme.Colors
 
 @Composable
 fun dpToSp(dp: Dp): TextUnit {
@@ -17,11 +18,11 @@ fun dpToSp(dp: Dp): TextUnit {
 fun Color.withEnable(enable: Boolean): Color =
     this.copy(
         alpha = if (enable) 1F
-        else 0.3F
+        else Colors.disabled
     )
 
 fun Modifier.withEnable(enable: Boolean): Modifier =
     this.alpha(
         if (enable) 1F
-        else 0.3F
+        else Colors.disabled
     )

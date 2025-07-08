@@ -16,9 +16,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.runtime.MutableState
 import com.endava.beeq_components.organisms.BeeqCheckboxState
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.util.withEnable
 
 @Composable
@@ -37,7 +36,7 @@ fun BeeqCheckboxIcon(
         modifier = Modifier
             .size(20.dp)
             .background(
-                color = if (state != BeeqCheckboxState.UNCHECKED ) BrandColors.brand.withEnable(enabled)
+                color = if (state != BeeqCheckboxState.UNCHECKED ) UIColors.brand.withEnable(enabled)
                 else MaterialTheme.colorScheme.surface,
                 shape = RoundedCornerShape(4.dp)
             )

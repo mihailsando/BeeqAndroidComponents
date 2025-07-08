@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.util.withEnable
 
 enum class AccordionExpandIcon {
@@ -35,7 +35,7 @@ enum class AccordionExpandIcon {
                 modifier = Modifier
                     .rotate(if (expanded) 180f else 0f)
                     .size(20.dp),
-                tint = BrandColors.black.withEnable(enabled)
+                tint = UIColors.black.withEnable(enabled)
             )
         }
     }

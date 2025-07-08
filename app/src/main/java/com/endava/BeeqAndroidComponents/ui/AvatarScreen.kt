@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.endava.BeeqAndroidComponents.SectionHeader
 import com.endava.beeq_components.organisms.AvatarWithBadge
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.theme.StandardDimensions
 
 @Composable
@@ -21,28 +21,28 @@ fun AvatarScreen(){
             imageUrl = "https://randomuser.me/api/portraits/men/32.jpg",
             badgeContent = "online",
             avatarSize = StandardDimensions.XXL2,
-            badgeColor = BrandColors.success
+            badgeColor = UIColors.success
         )
         AvatarWithBadge(
             initials = "SS",
             imageUrl = "https://randomuser.me/api/portraits/men/32.jpg",
             badgeContent = "online",
             avatarSize = StandardDimensions.XXL,
-            badgeColor = BrandColors.success)
+            badgeColor = UIColors.success)
 
         AvatarWithBadge(
             initials = "SS",
             imageUrl = "https://randomuser.me/api/portraits/men/32.jpg",
             badgeContent = "33",
             avatarSize = StandardDimensions.XXL,
-            badgeColor = BrandColors.danger
+            badgeColor = UIColors.danger
         )
         AvatarWithBadge(
             initials = "SS",
             imageUrl = "https://randomuser.en/32.jpg",
             badgeContent = "    ",
             avatarSize = StandardDimensions.XXL,
-            badgeColor = BrandColors.danger
+            badgeColor = UIColors.danger
         )
         AvatarWithBadge(
             initials = "SS",

@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
-import com.endava.beeq_components.theme.BrandColors
+import com.endava.beeq_components.theme.colors.UIColors
 import com.endava.beeq_components.theme.StandardDimensions
 
 @Composable
@@ -34,8 +34,8 @@ fun Avatar(
     size: StandardDimensions,
     modifier: Modifier = Modifier,
     shape: Shape = CircleShape,
-    borderColor: Color = BrandColors.black,
-    background: Color = BrandColors.neutral_50,
+    borderColor: Color = UIColors.black,
+    background: Color = UIColors.neutral_50,
     borderWidth: Dp = 1.dp
 ) {
     val painter = rememberAsyncImagePainter(model = imageUrl)
