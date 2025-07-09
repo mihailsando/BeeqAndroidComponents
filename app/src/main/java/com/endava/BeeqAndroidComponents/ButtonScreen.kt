@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Adb
+import androidx.compose.material.icons.filled.AddShoppingCart
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Dangerous
 import androidx.compose.material.icons.filled.DateRange
@@ -112,7 +113,7 @@ fun ButtonScreen() {
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                text = "GhostButton Primary disable",
+                text = "GhostButton Primary",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
                 endIcon = Icons.Default.Warning,
@@ -133,7 +134,7 @@ fun ButtonScreen() {
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                text = "GhostButton Secondary disable",
+                text = "GhostButton Secondary",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
                 style = ButtonStyle.GhostButton(BeeqButtonColors.Secondary)
@@ -153,7 +154,7 @@ fun ButtonScreen() {
             )
             Spacer(Modifier.size(5.dp))
             BeeqButton(
-                text = "Ghost Danger disable",
+                text = "Ghost Danger ",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
                 style = ButtonStyle.GhostButton(BeeqButtonColors.Danger)
@@ -169,6 +170,7 @@ fun ButtonScreen() {
                 buttonSize = ButtonSize.Small,
                 loading = false,
                 enabled = true,
+                endIcon = Icons.Default.AddShoppingCart,
                 style = ButtonStyle.GhostButton(BeeqButtonColors.Success)
             )
             Spacer(Modifier.size(5.dp))
@@ -176,6 +178,7 @@ fun ButtonScreen() {
                 text = "Ghost Success disable",
                 buttonSize = ButtonSize.Small,
                 enabled = false,
+                endIcon = Icons.Default.AddShoppingCart,
                 style = ButtonStyle.GhostButton(BeeqButtonColors.Success)
             )
         }
@@ -186,7 +189,7 @@ fun ButtonScreen() {
                     onClick = {
                         errorSuspendFun()
                     },
-                    onError = { t->
+                    onError = { t ->
 
                     }
                 ),

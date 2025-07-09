@@ -17,4 +17,6 @@
     <dimen name="XXL2">56dp</dimen>
     <dimen name="XXL3">64dp</dimen>
     <dimen name="XXL4">96dp</dimen>
+
+    <dimen name="button_stroke_weight">2dp</dimen>
 </resources>

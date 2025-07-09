@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.Colors
+import com.endava.beeq_components.theme.DimensionValues
 import com.endava.beeq_components.util.withEnable
 import kotlinx.coroutines.launch
 
@@ -73,8 +73,8 @@ fun BeeqButton(
         shape = RoundedCornerShape(8.dp),
         border = style.borderStrokeColor?.let {
             BorderStroke(
-                color = it.withEnable(enabled),
-                width = 2.dp
+                color = it.withEnable(enabled && !effectiveLoading),
+                width = DimensionValues.button_stroke_weight
             )
         },
         contentPadding = buttonSize.contentPadding,
@@ -91,8 +91,8 @@ fun BeeqButton(
             if (effectiveLoading) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(20.dp),
-                    strokeWidth = 2.dp,
-                    color = style.colors.contentColor
+                    strokeWidth = DimensionValues.button_stroke_weight,
+                    color = style.colors.contentColor.withEnable(false)
                 )
             } else {
                 startIcon?.let {
@@ -114,6 +114,7 @@ fun BeeqButton(
                 Icon(
                     imageVector = it,
                     contentDescription = null,
+                    tint = style.colors.contentColor.withEnable(enabled && !effectiveLoading),
                     modifier = Modifier
                         .size(20.dp)
                 )
