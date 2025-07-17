@@ -13,8 +13,8 @@ import java.util.Calendar
 
 @Composable
 fun DatePickerScreen() {
-    val min = remember { Calendar.getInstance().apply { add(Calendar.DAY_OF_MONTH, -10) } }
-    val max = remember { Calendar.getInstance().apply { add(Calendar.DAY_OF_MONTH, 30) } }
+    val min = remember { Calendar.getInstance().apply { add(Calendar.YEAR, -2) } }
+    val max = remember { Calendar.getInstance().apply { add(Calendar.YEAR, 2) } }
 
     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(24.dp)) {
 
@@ -24,8 +24,6 @@ fun DatePickerScreen() {
             label = "Single",
             key = "preview_single",
             mode = DatePickerMode.Single(),
-            minDate = min,
-            maxDate = max
         )
         BeeqDatePickerField(
             label = "Multiple",

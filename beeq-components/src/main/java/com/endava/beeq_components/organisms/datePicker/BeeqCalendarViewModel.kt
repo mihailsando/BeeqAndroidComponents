@@ -17,6 +17,9 @@ class BeeqCalendarViewModel(
     val maxDate: Calendar? = null
 ) : ViewModel() {
 
+    private val _isMonthSelectorOpen = MutableStateFlow(false)
+    val isMonthSelectorOpen: StateFlow<Boolean> = _isMonthSelectorOpen
+
     private val _selectedDates = MutableStateFlow<Set<Calendar>>(emptySet())
     val selectedDates: StateFlow<Set<Calendar>> = _selectedDates.asStateFlow()
 
@@ -86,6 +89,39 @@ class BeeqCalendarViewModel(
         currentMonth.value = (currentMonth.value.clone() as Calendar).apply {
             add(Calendar.MONTH, 1)
         }
+    }
+
+    fun toggleMonthSelector() {
+        _isMonthSelectorOpen.value = !_isMonthSelectorOpen.value
+    }
+
+    fun incrementYear() {
+        currentMonth.value = (currentMonth.value.clone() as Calendar).apply {
+            add(Calendar.YEAR, 1)
+        }
+    }
+
+    fun decrementYear() {
+        currentMonth.value = (currentMonth.value.clone() as Calendar).apply {
+            add(Calendar.YEAR, -1)
+        }
+    }
+
+    fun setMonthTo(date: Calendar) {
+        currentMonth.value = (date.clone() as Calendar).apply {
+            set(Calendar.DAY_OF_MONTH, 1)
+        }
+    }
+
+    fun selectMonth(monthIndex: Int) {
+        currentMonth.value = (currentMonth.value.clone() as Calendar).apply {
+            set(Calendar.MONTH, monthIndex)
+        }
+        _isMonthSelectorOpen.value = false
+    }
+
+    fun resetMonthSelector() {
+        _isMonthSelectorOpen.value = false
     }
 }
 

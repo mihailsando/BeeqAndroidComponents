@@ -2,7 +2,6 @@ package com.endava.beeq_components.organisms.datePicker
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,16 +12,14 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarToday
-import androidx.compose.material.icons.filled.ChevronLeft
-import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,9 +33,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Locale
 
 
 @Composable
@@ -82,6 +77,20 @@ fun BeeqCalendarDialog(
         )
 
         if (showDialog) {
+            // Reset to day view when dialog is opened
+            LaunchedEffect(Unit) {
+                viewModel.resetMonthSelector()
+
+                val firstView = if (viewModel.mode is DatePickerMode.Range) {
+                    rangeStart
+                } else {
+                    selectedDates.firstOrNull()
+                }
+
+                firstView?.let {
+                    viewModel.setMonthTo(it)
+                }
+            }
             Dialog(onDismissRequest = {
                 if (showDialogExternal == null) internalDialogState.value = false
                 focusManager.clearFocus(force = true)
@@ -104,25 +113,19 @@ fun BeeqCalendar(
     val rangeStart by viewModel.rangeStart.collectAsState()
     val rangeEnd by viewModel.rangeEnd.collectAsState()
     val month by viewModel.currentMonth.collectAsState()
+    val isMonthSelectorOpen by viewModel.isMonthSelectorOpen.collectAsState()
     val days = remember(month) { buildMonthDays(month) }
 
     Column(modifier.padding(8.dp)) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            IconButton(onClick = { viewModel.goToPreviousMonth() }) {
-                Icon(Icons.Default.ChevronLeft, contentDescription = "Previous Month")
-            }
-            Text(
-                text = SimpleDateFormat("MMMM yyyy", Locale.getDefault()).format(month.time),
-                style = MaterialTheme.typography.titleMedium
-            )
-            IconButton(onClick = { viewModel.goToNextMonth() }) {
-                Icon(Icons.Default.ChevronRight, contentDescription = "Next Month")
-            }
+        if (isMonthSelectorOpen) {
+            BeeqMonthSelector(viewModel = viewModel)
+            return@Column
         }
+
+        BeeqCalendarHeader(
+            type = CalendarHeaderType.MONTHS,
+            viewModel = viewModel
+        )
 
         Row(Modifier.fillMaxWidth()) {
             listOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun").forEach {
