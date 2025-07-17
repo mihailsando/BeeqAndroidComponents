@@ -74,5 +74,6 @@ dependencies {
 
     implementation(libs.material.icons.extended )
 
+
     implementation(project(":beeq-components"))
 }

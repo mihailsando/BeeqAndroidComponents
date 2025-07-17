@@ -1,7 +1,6 @@
 package com.endava.BeeqAndroidComponents
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -48,7 +47,7 @@ fun CardScreen() {
             reverseColors = false
         ),
 
-    )
+        )
 
     val miniCardWithoutEndIcon = CardType.MiniCard(
         avatar = MiniCardAvatar(
@@ -66,7 +65,7 @@ fun CardScreen() {
     )
 
     Column {
-        SectionHeader("Button")
+        SectionHeader("Cards")
 
         BeeqCard(
             title = "Mini Card Title",
