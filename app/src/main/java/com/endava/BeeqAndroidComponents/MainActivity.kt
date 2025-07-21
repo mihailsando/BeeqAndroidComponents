@@ -50,6 +50,7 @@ class MainActivity : ComponentActivity() {
 }
 
 val allScreens = listOf<@Composable () -> Unit>(
+    { DividerScreen() },
     { DialogScreen() },
     { DatePickerScreen() },
     { CardScreen() },
