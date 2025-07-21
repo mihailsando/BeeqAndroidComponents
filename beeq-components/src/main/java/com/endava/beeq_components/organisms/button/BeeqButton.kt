@@ -41,6 +41,7 @@ fun BeeqButton(
     buttonSize: ButtonSize = ButtonSize.Medium,
     style: ButtonStyle,
     loading: Boolean = false,
+    // TODO: replace with painter
     startIcon: ImageVector? = null,
     endIcon: ImageVector? = null,
 ) {
