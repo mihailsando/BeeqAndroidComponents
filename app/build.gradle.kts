@@ -73,7 +73,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(libs.material.icons.extended )
-
-
-    implementation(project(":beeq-components"))
+    implementation(project(":ui-compose"))
 }
