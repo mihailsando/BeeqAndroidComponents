@@ -16,11 +16,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.organisms.BeeqDialog
-import com.endava.beeq_components.organisms.button.BeeqButton
-import com.endava.beeq_components.organisms.button.BeeqButtonColors
-import com.endava.beeq_components.organisms.button.ButtonAction
-import com.endava.beeq_components.organisms.button.ButtonStyle
+import endava.beeq.compose.organisms.BeeqDialog
+import endava.beeq.compose.organisms.button.BeeqButton
+import endava.beeq.compose.organisms.button.BeeqButtonColors
+import endava.beeq.compose.organisms.button.ButtonAction
+import endava.beeq.compose.organisms.button.ButtonStyle
 
 @Composable
 fun DialogScreen() {

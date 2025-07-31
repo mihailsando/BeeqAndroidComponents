@@ -11,8 +11,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.organisms.BeeqDivider
-import com.endava.beeq_components.theme.Colors
+import endava.beeq.compose.organisms.BeeqDivider
+import endava.beeq.compose.theme.Colors
 
 
 @Composable

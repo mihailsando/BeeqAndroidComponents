@@ -1,4 +1,4 @@
-package com.endava.beeq_components.atoms
+package endava.beeq.compose.atoms
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,8 +24,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.theme.StandardDimensions
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.theme.StandardDimensions
 
 @Composable
 fun Avatar(

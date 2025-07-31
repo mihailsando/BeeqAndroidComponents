@@ -1,4 +1,4 @@
-package com.endava.beeq_components.atoms
+package endava.beeq.compose.atoms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -16,9 +16,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.Add
-import com.endava.beeq_components.organisms.BeeqCheckboxState
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.util.withEnable
+import endava.beeq.compose.organisms.BeeqCheckboxState
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.util.withEnable
 
 @Composable
 fun BeeqCheckboxIcon(

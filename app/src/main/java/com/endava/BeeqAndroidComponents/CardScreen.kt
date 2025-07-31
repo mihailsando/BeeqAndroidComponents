@@ -18,15 +18,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.organisms.BeeqCard
-import com.endava.beeq_components.organisms.CardEndIcon
-import com.endava.beeq_components.organisms.CardType
-import com.endava.beeq_components.organisms.MiniCardAvatar
-import com.endava.beeq_components.organisms.button.BeeqButton
-import com.endava.beeq_components.organisms.button.BeeqButtonColors
-import com.endava.beeq_components.organisms.button.ButtonAction
-import com.endava.beeq_components.organisms.button.ButtonSize
-import com.endava.beeq_components.organisms.button.ButtonStyle
+import endava.beeq.compose.organisms.BeeqCard
+import endava.beeq.compose.organisms.CardEndIcon
+import endava.beeq.compose.organisms.CardType
+import endava.beeq.compose.organisms.MiniCardAvatar
+import endava.beeq.compose.organisms.button.BeeqButton
+import endava.beeq.compose.organisms.button.BeeqButtonColors
+import endava.beeq.compose.organisms.button.ButtonAction
+import endava.beeq.compose.organisms.button.ButtonSize
+import endava.beeq.compose.organisms.button.ButtonStyle
 import kotlinx.coroutines.delay
 
 @Composable

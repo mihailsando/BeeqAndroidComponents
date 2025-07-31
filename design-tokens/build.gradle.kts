@@ -23,6 +23,21 @@ android {
             )
         }
     }
+
+    flavorDimensions += "branding"
+
+    productFlavors {
+        create("endava") {
+            dimension = "branding"
+        }
+        create("eq") {
+            dimension = "branding"
+        }
+        create("beeqDefault") {
+            dimension = "branding"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

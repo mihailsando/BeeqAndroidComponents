@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.button
+package endava.beeq.compose.organisms.button
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.material3.ButtonColors
@@ -7,7 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.Colors
+import endava.beeq.compose.theme.Colors
 
 
 sealed class ButtonStyle(

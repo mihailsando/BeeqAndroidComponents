@@ -16,9 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.organisms.AlertBeeq
-import com.endava.beeq_components.organisms.AlertType
-import com.endava.beeq_components.organisms.DescriptionWithLink
+import endava.beeq.compose.organisms.AlertBeeq
+import endava.beeq.compose.organisms.AlertType
+import endava.beeq.compose.organisms.DescriptionWithLink
 
 @Composable
 fun AlertInfoScreen() {

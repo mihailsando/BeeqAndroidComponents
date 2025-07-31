@@ -16,12 +16,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.organisms.BeeqDropdown
-import com.endava.beeq_components.organisms.BeeqDropdownItem
-import com.endava.beeq_components.organisms.button.BeeqButton
-import com.endava.beeq_components.organisms.button.BeeqButtonColors
-import com.endava.beeq_components.organisms.button.ButtonSize
-import com.endava.beeq_components.organisms.button.ButtonStyle
+import endava.beeq.compose.organisms.BeeqDropdown
+import endava.beeq.compose.organisms.BeeqDropdownItem
+import endava.beeq.compose.organisms.button.BeeqButton
+import endava.beeq.compose.organisms.button.BeeqButtonColors
+import endava.beeq.compose.organisms.button.ButtonSize
+import endava.beeq.compose.organisms.button.ButtonStyle
 
 @Composable
 fun DropdownScreen() {

@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms
+package endava.beeq.compose.organisms
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -10,10 +10,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.atoms.Avatar
-import com.endava.beeq_components.atoms.Badge
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.theme.StandardDimensions
+import endava.beeq.compose.atoms.Avatar
+import endava.beeq.compose.atoms.Badge
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.theme.StandardDimensions
 
 @Composable
 fun AvatarWithBadge(

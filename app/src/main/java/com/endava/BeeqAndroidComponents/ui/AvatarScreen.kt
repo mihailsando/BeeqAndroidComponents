@@ -7,9 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.endava.BeeqAndroidComponents.SectionHeader
-import com.endava.beeq_components.organisms.AvatarWithBadge
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.theme.StandardDimensions
+import endava.beeq.compose.organisms.AvatarWithBadge
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.theme.StandardDimensions
 
 @Composable
 fun AvatarScreen(){

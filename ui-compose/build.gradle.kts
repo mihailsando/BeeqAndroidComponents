@@ -9,7 +9,8 @@ group = "com.endava"
 version = "1.0.0"
 
 android {
-    namespace = "com.endava.beeq_components"
+    namespace = "endava.beeq.compose"
+    namespace = "endava.beeq.compose"
     compileSdk = 35
 
     defaultConfig {
@@ -39,10 +40,10 @@ android {
         create("endava") {
             dimension = "branding"
         }
-        create("EQ") {
+        create("eq") {
             dimension = "branding"
         }
-        create("beeqDefault") {
+        create("default") {
             dimension = "branding"
         }
     }
@@ -58,36 +59,53 @@ android {
     }
 }
 
+androidComponents {
+    beforeVariants {
+        it.flavorName?.let {flavor ->
+            it.enable = flavor in listOf("endava", "eq", "default")
+        }
+    }
+}
+
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("endavaRelease") {
-                from(components["endavaRelease"])
-                groupId = "com.endava"
-                artifactId = "beeq-components-endava"
-                version = "1.0.0"
+            components.findByName("endavaRelease")?.let {
+                create<MavenPublication>("endavaRelease") {
+                    from(it)
+                    groupId = "com.endava"
+                    artifactId = "beeq-compose-endava"
+                    version = "1.0.0"
+                }
             }
-            create<MavenPublication>("EQRelease") {
-                from(components["EQRelease"])
-                groupId = "com.endava"
-                artifactId = "beeq-components-EQ"
-                version = "1.0.0"
+            components.findByName("eqRelease")?.let {
+                create<MavenPublication>("eqRelease") {
+                    from(it)
+                    groupId = "com.endava"
+                    artifactId = "beeq-compose-eq"
+                    version = "1.0.0"
+                }
             }
-            create<MavenPublication>("beeqDefaultRelease") {
-                from(components["beeqDefaultRelease"])
-                groupId = "com.endava"
-                artifactId = "beeq-components-default"
-                version = "1.0.0"
+
+            components.findByName("defaultBrandRelease")?.let {
+                create<MavenPublication>("defaultRelease") {
+                    from(it)
+                    groupId = "com.endava"
+                    artifactId = "beeq-compose-default"
+                    version = "1.0.0"
+                }
             }
         }
-    }
 
-    repositories {
-        mavenLocal()
+        repositories {
+            mavenLocal()
+        }
     }
 }
 
 dependencies {
+
+    implementation(project(":design-tokens"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

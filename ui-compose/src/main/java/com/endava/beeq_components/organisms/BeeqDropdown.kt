@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms
+package endava.beeq.compose.organisms
 
 import android.util.Log
 import androidx.compose.foundation.clickable
@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.Colors
+import endava.beeq.compose.theme.Colors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

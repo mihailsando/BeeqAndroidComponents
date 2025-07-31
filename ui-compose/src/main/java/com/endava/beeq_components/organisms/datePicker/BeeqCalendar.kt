@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.datePicker
+package endava.beeq.compose.organisms.datePicker
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

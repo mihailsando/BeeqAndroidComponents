@@ -1,4 +1,4 @@
-package com.endava.beeq_components
+package endava.beeq.compose
 
 import org.junit.Test
 

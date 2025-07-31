@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.accordion
+package endava.beeq.compose.organisms.accordion
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.util.withEnable
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.util.withEnable
 
 enum class AccordionExpandIcon {
     Chevron, Plus;

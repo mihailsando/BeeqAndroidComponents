@@ -1,4 +1,4 @@
-package com.endava.beeq_components.theme
+package endava.beeq.compose.theme
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily

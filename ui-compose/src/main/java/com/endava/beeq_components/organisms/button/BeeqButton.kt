@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.button
+package endava.beeq.compose.organisms.button
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
@@ -28,8 +28,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.DimensionValues
-import com.endava.beeq_components.util.withEnable
+import endava.beeq.compose.theme.DimensionValues
+import endava.beeq.compose.util.withEnable
 import kotlinx.coroutines.launch
 
 @Composable

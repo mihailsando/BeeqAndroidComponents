@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms
+package endava.beeq.compose.organisms
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.Orientation

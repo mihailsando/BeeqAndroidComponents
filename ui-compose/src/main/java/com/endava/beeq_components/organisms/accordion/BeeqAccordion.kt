@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.accordion
+package endava.beeq.compose.organisms.accordion
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.theme.StandardDimensions
-import com.endava.beeq_components.theme.TextStyles
-import com.endava.beeq_components.util.withEnable
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.theme.StandardDimensions
+import endava.beeq.compose.theme.TextStyles
+import endava.beeq.compose.util.withEnable
 
 @Composable
 fun BeeqAccordion(

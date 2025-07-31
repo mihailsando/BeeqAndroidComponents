@@ -1,9 +1,9 @@
-package com.endava.beeq_components.theme.colors
+package endava.beeq.compose.theme.colors
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import com.endava.beeq_components.R
+import endava.beeq.compose.R
 
 object TextColors {
 

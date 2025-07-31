@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.datePicker
+package endava.beeq.compose.organisms.datePicker
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember

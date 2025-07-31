@@ -1,10 +1,10 @@
-package com.endava.beeq_components.theme
+package endava.beeq.compose.theme
 
-import com.endava.beeq_components.theme.colors.BackgroundColors
-import com.endava.beeq_components.theme.colors.IconColors
-import com.endava.beeq_components.theme.colors.StrokeColors
-import com.endava.beeq_components.theme.colors.TextColors
-import com.endava.beeq_components.theme.colors.UIColors
+import endava.beeq.compose.theme.colors.BackgroundColors
+import endava.beeq.compose.theme.colors.IconColors
+import endava.beeq.compose.theme.colors.StrokeColors
+import endava.beeq.compose.theme.colors.TextColors
+import endava.beeq.compose.theme.colors.UIColors
 
 object Colors {
     val bg = BackgroundColors

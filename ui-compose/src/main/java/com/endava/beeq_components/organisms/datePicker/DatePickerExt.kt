@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.datePicker
+package endava.beeq.compose.organisms.datePicker
 
 import java.text.SimpleDateFormat
 import java.util.Calendar

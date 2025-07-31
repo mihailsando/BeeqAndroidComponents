@@ -1,4 +1,4 @@
-package com.endava.beeq_components
+package endava.beeq.compose
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.endava.beeq_components.test", appContext.packageName)
+        assertEquals("endava.beeq.compose.test", appContext.packageName)
     }
 }

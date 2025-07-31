@@ -7,8 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.organisms.datePicker.BeeqDatePickerField
-import com.endava.beeq_components.organisms.datePicker.DatePickerMode
+import endava.beeq.compose.organisms.datePicker.BeeqDatePickerField
+import endava.beeq.compose.organisms.datePicker.DatePickerMode
 import java.util.Calendar
 
 @Composable

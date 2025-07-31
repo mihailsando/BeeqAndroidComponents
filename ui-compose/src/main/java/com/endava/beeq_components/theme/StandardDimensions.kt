@@ -1,9 +1,9 @@
-package com.endava.beeq_components.theme
+package endava.beeq.compose.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.Dp
-import com.endava.beeq_components.R
+import endava.beeq.compose.R
 
 sealed interface StandardDimensions {
 

@@ -5,9 +5,9 @@ import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.endava.beeq_components.organisms.accordion.AccordionExpandIcon
-import com.endava.beeq_components.organisms.accordion.BeeqAccordion
-import com.endava.beeq_components.organisms.accordion.PrefixAccordionIcon
+import endava.beeq.compose.organisms.accordion.AccordionExpandIcon
+import endava.beeq.compose.organisms.accordion.BeeqAccordion
+import endava.beeq.compose.organisms.accordion.PrefixAccordionIcon
 
 @Composable
 fun AccordionScreen() {

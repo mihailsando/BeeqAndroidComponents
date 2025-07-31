@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms
+package endava.beeq.compose.organisms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.endava.beeq_components.organisms.button.BeeqButtonColors
-import com.endava.beeq_components.theme.Colors
+import endava.beeq.compose.organisms.button.BeeqButtonColors
+import endava.beeq.compose.theme.Colors
 
 @Composable
 fun BeeqDialog(

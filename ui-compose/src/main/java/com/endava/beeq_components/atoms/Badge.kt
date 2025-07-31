@@ -1,4 +1,4 @@
-package com.endava.beeq_components.atoms
+package endava.beeq.compose.atoms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
@@ -12,8 +12,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.util.dpToSp
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.util.dpToSp
 
 @Composable
 fun Badge(

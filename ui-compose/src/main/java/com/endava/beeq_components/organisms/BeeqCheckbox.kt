@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms
+package endava.beeq.compose.organisms
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -14,10 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.atoms.BeeqCheckboxIcon
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.theme.TextStyles
-import com.endava.beeq_components.util.withEnable
+import endava.beeq.compose.atoms.BeeqCheckboxIcon
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.theme.TextStyles
+import endava.beeq.compose.util.withEnable
 
 enum class BeeqCheckboxState {
     CHECKED, UNCHECKED, MINUS, PLUS;

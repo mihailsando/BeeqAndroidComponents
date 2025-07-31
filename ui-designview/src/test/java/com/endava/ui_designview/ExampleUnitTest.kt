@@ -1,4 +1,4 @@
-package com.endava.ui_designview
+package endava.beeq.designview
 
 import org.junit.Test
 

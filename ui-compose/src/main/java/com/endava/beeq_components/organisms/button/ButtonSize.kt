@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.button
+package endava.beeq.compose.organisms.button
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.unit.Dp

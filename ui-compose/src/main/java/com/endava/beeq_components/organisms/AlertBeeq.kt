@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms
+package endava.beeq.compose.organisms
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
@@ -30,9 +30,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.R
-import com.endava.beeq_components.theme.colors.UIColors
-import com.endava.beeq_components.theme.Radius
+import endava.beeq.compose.R
+import endava.beeq.compose.theme.colors.UIColors
+import endava.beeq.compose.theme.Radius
 import kotlinx.coroutines.delay
 
 sealed interface AlertType {

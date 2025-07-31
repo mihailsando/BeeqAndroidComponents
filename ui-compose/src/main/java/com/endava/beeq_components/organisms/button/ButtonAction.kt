@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.button
+package endava.beeq.compose.organisms.button
 
 sealed interface ButtonAction {
 

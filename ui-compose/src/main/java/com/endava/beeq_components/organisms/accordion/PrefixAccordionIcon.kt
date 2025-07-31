@@ -1,4 +1,4 @@
-package com.endava.beeq_components.organisms.accordion
+package endava.beeq.compose.organisms.accordion
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.endava.beeq_components.atoms.Avatar
-import com.endava.beeq_components.theme.StandardDimensions
+import endava.beeq.compose.atoms.Avatar
+import endava.beeq.compose.theme.StandardDimensions
 
 sealed class PrefixAccordionIcon {
 

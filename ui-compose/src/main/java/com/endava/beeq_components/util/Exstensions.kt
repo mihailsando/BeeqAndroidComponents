@@ -1,4 +1,4 @@
-package com.endava.beeq_components.util
+package endava.beeq.compose.util
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -7,7 +7,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
-import com.endava.beeq_components.theme.Colors
+import endava.beeq.compose.theme.Colors
 
 @Composable
 fun dpToSp(dp: Dp): TextUnit {
