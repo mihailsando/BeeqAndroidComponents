@@ -33,10 +33,10 @@ android {
         create("endava") {
             dimension = "branding"
         }
-        create("EQ") {
+        create("eq") {
             dimension = "branding"
         }
-        create("beeqDefault") {
+        create("default") {
             dimension = "branding"
         }
     }

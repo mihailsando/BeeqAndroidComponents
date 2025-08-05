@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AccordionView">
+        <attr name="title" format="string"/>
+        <attr name="startIcon" format="reference"/>
+        <attr name="withSettings" format="boolean"/>
+        <attr name="initiallyExpanded" format="boolean"/>
+        <attr name="enabled" format="boolean"/>
+        <attr name="type" format="enum">
+            <enum name="ghost" value="0"/>
+            <enum name="filled" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

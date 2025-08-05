@@ -51,7 +51,7 @@ android {
 androidComponents {
     beforeVariants {
         it.flavorName?.let {flavor ->
-            it.enable = flavor in listOf("endava", "eq", "beeqDefault")
+            it.enable = flavor in listOf("endava", "eq", "default")
         }
     }
 }

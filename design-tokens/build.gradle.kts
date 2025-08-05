@@ -33,7 +33,7 @@ android {
         create("eq") {
             dimension = "branding"
         }
-        create("beeqDefault") {
+        create("default") {
             dimension = "branding"
         }
     }

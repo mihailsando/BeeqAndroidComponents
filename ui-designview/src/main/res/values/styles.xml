@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AccordionStyle">
+<!--        <item name="accordionTitle">Accordion Title</item>-->
+<!--        <item name="accordionExpanded">false</item>-->
+<!--        <item name="accordionIcon">@drawable/ic_expand</item>-->
+<!--        <item name="accordionEnabled">true</item>-->
+    </style>
+</resources>

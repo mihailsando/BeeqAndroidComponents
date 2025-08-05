@@ -24,6 +24,4 @@ object BackgroundColors {
 
     val alt: Color
         @Composable get() = colorResource(id = R.color.neutral_300)
-
-
 }

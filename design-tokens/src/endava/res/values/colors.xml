@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#0C192F</color>
+
+    <color name="brand">@color/bq_endava_orange_600</color>
+    <color name="brand_light">#E7F0FD</color>
+    <color name="brand_alt">#2E5FDD</color>
+    <color name="brand_dark">#0D37A2</color>
+    
+    <color name="accent">#F3F5F9</color>
+    <color name="accent_light">@color/bq_cyan_600</color>
+    <color name="accent_alt">@color/bq_cyan_400</color>
+    <color name="accent_dark">@color/bq_cyan_1000</color>
+
+    <color name="neutral_50">#F7F7F8</color>
+    <color name="neutral_100">#E4E6E7</color>
+    <color name="neutral_200">#B5BABE</color>
+    <color name="neutral_300">#949CA1</color>
+    <color name="neutral_400">#737D84</color>
+    <color name="neutral_500">#525F67</color>
+    <color name="neutral_600">#30404B</color>
+    <color name="neutral_700">#2B3942</color>
+    <color name="neutral_800">#263139</color>
+    <color name="neutral_900">#192B37</color>
+    <color name="neutral_950">#151B1E</color>
+    <color name="neutral_1000">#0F1316</color>
+
+    <color name="success">#00875A</color>
+    <color name="success_light">#E5F3EE</color>
+    <color name="success_dark">@color/bq_green_1000</color>
+
+    <color name="warning">@color/bq_orange_600</color>
+    <color name="warning_light">@color/bq_yellow_100</color>
+    <color name="warning_dark">@color/bq_orange_900</color>
+
+    <color name="danger">#DE0A14</color>
+    <color name="danger_light">#FCE6E7</color>
+    <color name="danger_dark">@color/bq_red_1000</color>
+
+    <color name="info">@color/bq_blue_600</color>
+    <color name="info_light">@color/bq_red_100</color>
+    <color name="info_dark">@color/bq_blue_1000</color>
+
+    <color name="data_1">@color/brand</color>
+    <color name="data_2">#AF0CD8</color>
+    <color name="data_3">#0CA8D8</color>
+    <color name="data_4">@color/bq_teal_600</color>
+    <color name="data_5">@color/bq_yellow_600</color>
+    <color name="data_6">@color/bq_orange_600</color>
+    <color name="data_7">@color/bq_blue_600</color>
+    <color name="data_8">@color/bq_red_600</color>
+    <color name="data_9">@color/bq_purple_600</color>
+    <color name="data_10">@color/neutral_600</color>
+    <color name="data_11">@color/neutral_900</color>
+    <color name="data_12">@color/neutral_100</color>
+
+    <color name="focus">@color/brand</color>
+
+</resources>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--blue-->
+    <color name="bq_blue_100">#e7f0fd</color>
+    <color name="bq_blue_200">#d0e2fb</color>
+    <color name="bq_blue_300">#a1c5f7</color>
+    <color name="bq_blue_400">#73a8f3</color>
+    <color name="bq_blue_500">#448bef</color>
+    <color name="bq_blue_600">#156eeb</color>
+    <color name="bq_blue_700">#1158bc</color>
+    <color name="bq_blue_800">#0d428d</color>
+    <color name="bq_blue_900">#082c5e</color>
+    <color name="bq_blue_1000">#04162f</color>
+
+    <!--bq_corai-->
+    <color name="bq_corai_100">#fff2f2</color>
+    <color name="bq_corai_200">#ffe6e6</color>
+    <color name="bq_corai_300">#ffccce</color>
+    <color name="bq_corai_400">#ffb3b5</color>
+    <color name="bq_corai_500">#ff999d</color>
+    <color name="bq_corai_600">#ff8084</color>
+    <color name="bq_corai_700">#cc666a</color>
+    <color name="bq_corai_800">#994d4f</color>
+    <color name="bq_corai_900">#663335</color>
+    <color name="bq_corai_1000">#331a1a</color>
+
+    <!--cyan-->
+    <color name="bq_cyan_100">#e8f7fb</color>
+    <color name="bq_cyan_200">#d2f0f8</color>
+    <color name="bq_cyan_300">#a5e1f1</color>
+    <color name="bq_cyan_400">#78d1e9</color>
+    <color name="bq_cyan_500">#4bc2e2</color>
+    <color name="bq_cyan_600">#1eb3db</color>
+    <color name="bq_cyan_700">#188faf</color>
+    <color name="bq_cyan_800">#126b83</color>
+    <color name="bq_cyan_900">#0c4858</color>
+    <color name="bq_cyan_1000">#06242c</color>
+
+    <!--gold-->
+    <color name="bq_gold_100">#fbf4ec</color>
+    <color name="bq_gold_200">#f7e9da</color>
+    <color name="bq_gold_300">#f0d3b6</color>
+    <color name="bq_gold_400">#e8bc91</color>
+    <color name="bq_gold_500">#e1a66d</color>
+    <color name="bq_gold_600">#d99048</color>
+    <color name="bq_gold_700">#ae733a</color>
+    <color name="bq_gold_800">#82562b</color>
+    <color name="bq_gold_900">#573a1d</color>
+    <color name="bq_gold_1000">#2b1d0e</color>
+
+    <!--Green-->
+    <color name="bq_green_100">#e8f8ef</color>
+    <color name="bq_green_200">#d2f1e0</color>
+    <color name="bq_green_300">#a5e3c1</color>
+    <color name="bq_green_400">#78d5a1</color>
+    <color name="bq_green_500">#4bc782</color>
+    <color name="bq_green_600">#1eb963</color>
+    <color name="bq_green_700">#18944f</color>
+    <color name="bq_green_800">#126f3b</color>
+    <color name="bq_green_900">#0c4a28</color>
+    <color name="bq_green_1000">#062514</color>
+
+    <!--grey-->
+    <color name="bq_grey_100">#f1f2f4</color>
+    <color name="bq_grey_200">#e7e8eb</color>
+    <color name="bq_grey_300">#caccd2</color>
+    <color name="bq_grey_400">#a6aab3</color>
+    <color name="bq_grey_50">#f6f6f8</color>
+    <color name="bq_grey_500">#898e99</color>
+    <color name="bq_grey_600">#646a77</color>
+    <color name="bq_grey_700">#3f4350</color>
+    <color name="bq_grey_800">#2a2c35</color>
+    <color name="bq_grey_900">#1c1d23</color>
+    <color name="bq_grey_950">#15161a</color>
+    <color name="bq_grey_1000">#0d0e11</color>
+
+    <!--Indigo-->
+    <color name="bq_indigo_100">#edecfc</color>
+    <color name="bq_indigo_200">#dcdafa</color>
+    <color name="bq_indigo_300">#b9b5f5</color>
+    <color name="bq_indigo_400">#9590ef</color>
+    <color name="bq_indigo_500">#726bea</color>
+    <color name="bq_indigo_600">#4f46e5</color>
+    <color name="bq_indigo_700">#3f38b7</color>
+    <color name="bq_indigo_800">#2f2a89</color>
+    <color name="bq_indigo_900">#201c5c</color>
+    <color name="bq_indigo_1000">#100e2e</color>
+
+    <!--Iris-->
+    <color name="bq_iris_100">#e9f0ff</color>
+    <color name="bq_iris_200">#d6e0ff</color>
+    <color name="bq_iris_300">#b2c0fe</color>
+    <color name="bq_iris_400">#8691f8</color>
+    <color name="bq_iris_500">#6061ee</color>
+    <color name="bq_iris_600">#4f46e5</color>
+    <color name="bq_iris_700">#413abd</color>
+    <color name="bq_iris_800">#332e95</color>
+    <color name="bq_iris_900">#26216d</color>
+    <color name="bq_iris_1000">#181545</color>
+
+    <!--Lime-->
+    <color name="bq_lime_100">#f5fae8</color>
+    <color name="bq_lime_200">#ecf6d2</color>
+    <color name="bq_lime_300">#d9eda5</color>
+    <color name="bq_lime_400">#c5e379</color>
+    <color name="bq_lime_500">#b2da4c</color>
+    <color name="bq_lime_600">#9fd11f</color>
+    <color name="bq_lime_700">#7fa719</color>
+    <color name="bq_lime_800">#5f7d13</color>
+    <color name="bq_lime_900">#40540c</color>
+    <color name="bq_lime_1000">#202a06</color>
+
+    <!-- bq_magenta -->
+    <color name="bq_magenta_100">#fce7f4</color>
+    <color name="bq_magenta_200">#f9cfea</color>
+    <color name="bq_magenta_300">#f39fd6</color>
+    <color name="bq_magenta_400">#ee6fbf</color>
+    <color name="bq_magenta_500">#e83fab</color>
+    <color name="bq_magenta_600">#de1395</color>
+    <color name="bq_magenta_700">#b20f77</color>
+    <color name="bq_magenta_800">#850c59</color>
+    <color name="bq_magenta_900">#58083c</color>
+    <color name="bq_magenta_1000">#2c041e</color>
+
+    <!-- bq_neutral -->
+    <color name="bq_neutral_white">#fbfbfc</color>
+    <color name="bq_neutral_black">#060708</color>
+
+    <!-- bq_orange -->
+    <color name="bq_orange_100">#fbf0e9</color>
+    <color name="bq_orange_200">#f8e1d4</color>
+    <color name="bq_orange_300">#f1c2a8</color>
+    <color name="bq_orange_400">#eaa47d</color>
+    <color name="bq_orange_500">#e38551</color>
+    <color name="bq_orange_600">#dc6726</color>
+    <color name="bq_orange_700">#b0521e</color>
+    <color name="bq_orange_800">#843e17</color>
+    <color name="bq_orange_900">#58290f</color>
+    <color name="bq_orange_1000">#2c1508</color>
+
+    <!-- bq_purple -->
+    <color name="bq_purple_100">#efebf8</color>
+    <color name="bq_purple_200">#e0d7f2</color>
+    <color name="bq_purple_300">#c1afe5</color>
+    <color name="bq_purple_400">#a388d8</color>
+    <color name="bq_purple_500">#8460cb</color>
+    <color name="bq_purple_600">#6538be</color>
+    <color name="bq_purple_700">#512d98</color>
+    <color name="bq_purple_800">#3d2272</color>
+    <color name="bq_purple_900">#28164c</color>
+    <color name="bq_purple_1000">#140b26</color>
+
+    <!-- bq_red -->
+    <color name="bq_red_100">#fce7ea</color>
+    <color name="bq_red_200">#f9d1d5</color>
+    <color name="bq_red_300">#f3a2ac</color>
+    <color name="bq_red_400">#ed7482</color>
+    <color name="bq_red_500">#e74559</color>
+    <color name="bq_red_600">#e1172f</color>
+    <color name="bq_red_700">#b41226</color>
+    <color name="bq_red_800">#870e1c</color>
+    <color name="bq_red_900">#5a0913</color>
+    <color name="bq_red_1000">#2d0509</color>
+
+    <!-- bq_sky -->
+    <color name="bq_sky_100">#eff4fb</color>
+    <color name="bq_sky_200">#dfeaf8</color>
+    <color name="bq_sky_300">#bfd5f1</color>
+    <color name="bq_sky_400">#9ec1e9</color>
+    <color name="bq_sky_500">#7eace2</color>
+    <color name="bq_sky_600">#5e97db</color>
+    <color name="bq_sky_700">#4b79af</color>
+    <color name="bq_sky_800">#385b83</color>
+    <color name="bq_sky_900">#263c58</color>
+    <color name="bq_sky_1000">#131e2c</color>
+
+    <!-- bq_teal -->
+    <color name="bq_teal_100">#e5f7f5</color>
+    <color name="bq_teal_200">#ccf0eb</color>
+    <color name="bq_teal_300">#99e1d8</color>
+    <color name="bq_teal_400">#66d2c4</color>
+    <color name="bq_teal_500">#33c3b1</color>
+    <color name="bq_teal_600">#00b49d</color>
+    <color name="bq_teal_700">#00907e</color>
+    <color name="bq_teal_800">#006c5e</color>
+    <color name="bq_teal_900">#00483f</color>
+    <color name="bq_teal_1000">#00241f</color>
+
+    <!-- bq_volcano -->
+    <color name="bq_volcano_100">#feede7</color>
+    <color name="bq_volcano_200">#fddbd1</color>
+    <color name="bq_volcano_300">#fbb8a3</color>
+    <color name="bq_volcano_400">#fa9474</color>
+    <color name="bq_volcano_500">#f87146</color>
+    <color name="bq_volcano_600">#f64d18</color>
+    <color name="bq_volcano_700">#c53e13</color>
+    <color name="bq_volcano_800">#942e0e</color>
+    <color name="bq_volcano_900">#621f0a</color>
+    <color name="bq_volcano_1000">#310f05</color>
+
+    <!-- bq_yellow -->
+    <color name="bq_yellow_100">#fefbe7</color>
+    <color name="bq_yellow_200">#fcf6d0</color>
+    <color name="bq_yellow_300">#faeea0</color>
+    <color name="bq_yellow_400">#f7e571</color>
+    <color name="bq_yellow_500">#f5dd41</color>
+    <color name="bq_yellow_600">#f2d412</color>
+    <color name="bq_yellow_700">#c2aa0e</color>
+    <color name="bq_yellow_800">#917f0b</color>
+    <color name="bq_yellow_900">#615507</color>
+    <color name="bq_yellow_1000">#302a04</color>
+
+<!--    EXCLUSIVE ENDAVA THEME: -->
+    <!-- bq_endava_grey -->
+    <color name="bq_endava_grey_50">#f7f7f8</color>
+    <color name="bq_endava_grey_100">#e4e6e7</color>
+    <color name="bq_endava_grey_200">#b5babe</color>
+    <color name="bq_endava_grey_300">#949ca1</color>
+    <color name="bq_endava_grey_400">#737d84</color>
+    <color name="bq_endava_grey_500">#525f67</color>
+    <color name="bq_endava_grey_600">#30404b</color>
+    <color name="bq_endava_grey_700">#2b3942</color>
+    <color name="bq_endava_grey_800">#263139</color>
+    <color name="bq_endava_grey_900">#192b37</color>
+    <color name="bq_endava_grey_950">#151b1e</color>
+    <color name="bq_endava_grey_1000">#0f1316</color>
+
+    <!-- bq_endava_neutral -->
+    <color name="bq_endava_neutral_white">#fafbfb</color>
+    <color name="bq_endava_neutral_black">#060708</color>
+
+    <!-- bq_endava_orange -->
+    <color name="bq_endava_orange_100">#fef3f1</color>
+    <color name="bq_endava_orange_200">#fbd6d1</color>
+    <color name="bq_endava_orange_300">#fab7af</color>
+    <color name="bq_endava_orange_400">#fa988b</color>
+    <color name="bq_endava_orange_500">#fc7866</color>
+    <color name="bq_endava_orange_600">#ff5640</color>
+    <color name="bq_endava_orange_700">#ce4a39</color>
+    <color name="bq_endava_orange_800">#a03d30</color>
+    <color name="bq_endava_orange_900">#722e25</color>
+    <color name="bq_endava_orange_1000">#471e19</color>
+
+</resources>
