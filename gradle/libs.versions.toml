@@ -47,6 +47,9 @@ androidx-compose-material = { group = "androidx.wear.compose", name = "compose-m
 
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-databinding-common = { group = "androidx.databinding", name = "databinding-common", version.ref = "databindingCommon" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
