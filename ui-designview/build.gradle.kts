@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "endava.beeq.designview"
+    namespace = "com.endava.ui_designview"
     compileSdk = 35
 
     defaultConfig {

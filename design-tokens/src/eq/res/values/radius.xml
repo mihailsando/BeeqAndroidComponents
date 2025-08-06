@@ -4,8 +4,8 @@
     <dimen name="avatar_border_radius_square_S">@dimen/radius_s</dimen>
     <dimen name="avatar_border_radius_square_M">@dimen/radius_m</dimen>
 
-    <dimen name="accordion_medium_radius">@dimen/radius_l</dimen>
-    <dimen name="accordion_small_radius">@dimen/radius_s</dimen>
+    <dimen name="accordion_medium_radius">@dimen/radius_s</dimen>
+    <dimen name="accordion_small_radius">@dimen/radius_xs</dimen>
 
     <dimen name="avatar_border_radius_circle">@dimen/radius_full</dimen>
     <dimen name="alert_border_radius">@dimen/radius_l</dimen>
@@ -27,4 +27,6 @@
     <dimen name="toast_border_radius">@dimen/radius_s</dimen>
     <dimen name="tooltip_border_radius">@dimen/radius_s</dimen>
     <dimen name="upload_radius">@dimen/radius_m</dimen>
+
+    <dimen name="disabled_alpha">0.4</dimen>
 </resources>

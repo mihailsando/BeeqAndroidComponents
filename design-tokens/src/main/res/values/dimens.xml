@@ -19,5 +19,4 @@
     <dimen name="XXL4">96dp</dimen>
 
     <dimen name="button_stroke_weight">2dp</dimen>
-    <dimen name="disable">0.6</dimen>
 </resources>

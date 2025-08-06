@@ -7,8 +7,12 @@
         <attr name="initiallyExpanded" format="boolean"/>
         <attr name="enabled" format="boolean"/>
         <attr name="type" format="enum">
-            <enum name="ghost" value="0"/>
-            <enum name="filled" value="1"/>
+            <enum name="filled" value="0"/>
+            <enum name="ghost" value="1"/>
+        </attr>
+        <attr name="size" format="enum">
+            <enum name="medium" value="0"/>
+            <enum name="small" value="1"/>
         </attr>
     </declare-styleable>
 
