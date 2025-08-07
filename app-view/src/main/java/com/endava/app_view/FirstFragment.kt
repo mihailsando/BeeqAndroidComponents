@@ -18,6 +18,7 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
 
+    private lateinit var accordionView: AccordionView
 
 
     // This property is only valid between onCreateView and
@@ -30,6 +31,7 @@ class FirstFragment : Fragment() {
     ): View {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
+
         return binding.root
 
     }

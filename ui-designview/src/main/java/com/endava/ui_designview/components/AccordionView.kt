@@ -17,6 +17,7 @@ import com.endava.ui_designview.models.accordion.AccordionType
 import com.endava.ui_designview.theme.designColors
 import com.endava.ui_designview.util.addMargin
 import com.endava.ui_designview.util.applyBackGroundWithRadius
+import com.endava.ui_designview.util.applyStroke
 import com.endava.ui_designview.util.disableUI
 import com.endava.ui_designview.util.enableUI
 
@@ -41,13 +42,14 @@ class AccordionView @JvmOverloads constructor(
         expandImageView.setImageResource(if (expanded) R.drawable.minus else R.drawable.plus)
     }
 
-    private var isEnable: Boolean = true
-        set(value) {
-            if (value)
-                this.enableUI()
-            else
-                this.disableUI()
-        }
+    private val _isEnable = MutableLiveData(false)
+    val isEnable: LiveData<Boolean> get() = _isEnable
+    private val isEnableObserver = Observer<Boolean> { isEnable ->
+        if (isEnable)
+            this.enableUI()
+        else
+            this.disableUI()
+    }
 
     init {
         orientation = VERTICAL
@@ -65,8 +67,9 @@ class AccordionView @JvmOverloads constructor(
             context.theme.obtainStyledAttributes(attrs, R.styleable.AccordionView, 0, 0)
 
         try {
-            isEnable = attributes.getBoolean(R.styleable.AccordionView_enabled, true)
-            _isExpanded.value = attributes.getBoolean(R.styleable.AccordionView_initiallyExpanded, false)
+            _isEnable.value = attributes.getBoolean(R.styleable.AccordionView_enabled, true)
+            _isExpanded.value =
+                attributes.getBoolean(R.styleable.AccordionView_initiallyExpanded, false)
             val title = attributes.getString(R.styleable.AccordionView_title) ?: ""
             val withSettings = attributes.getBoolean(R.styleable.AccordionView_withSettings, false)
             val startIcon = attributes.getDrawable(R.styleable.AccordionView_startIcon)
@@ -96,10 +99,19 @@ class AccordionView @JvmOverloads constructor(
         }
 
         _isExpanded.observeForever(isExpandedObserver)
+        _isEnable.observeForever(isEnableObserver)
     }
 
     fun toggleExpand() {
         _isExpanded.value = !(isExpanded.value ?: false)
+    }
+
+    fun disable() {
+        _isEnable.value = false
+    }
+
+    fun enable() {
+        _isEnable.value = true
     }
 
     private fun applySizeAndType(size: AccordionSize, type: AccordionType) {
@@ -109,6 +121,14 @@ class AccordionView @JvmOverloads constructor(
         val gap = size.getGapPadding(resources)
         val radius = size.getRadius(resources)
         val headerColor = type.getColor(context)
+
+        if (type == AccordionType.FILLED) {
+            this.applyStroke(
+                strokeWidth = 1,
+                strokeColor = context.designColors.stroke.primary,
+                cornerRadius = radius
+            )
+        }
 
         headerLayout.setPadding(
             horizontal, vertical, horizontal, vertical
@@ -148,5 +168,6 @@ class AccordionView @JvmOverloads constructor(
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         _isExpanded.removeObserver(isExpandedObserver)
+        _isEnable.removeObserver(isEnableObserver)
     }
 }

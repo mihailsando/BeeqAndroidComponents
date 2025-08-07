@@ -20,7 +20,7 @@
             app:title="TEST accordion"
             app:type="filled"
             app:size="medium"
-            app:enabled="false"
+            app:enabled="true"
             app:withSettings="true"
             >
             <TextView

@@ -1,6 +1,7 @@
 package com.endava.ui_designview.util
 
 import android.content.res.Resources
+import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.View
 import android.view.ViewGroup
@@ -82,13 +83,16 @@ fun View.enableUI() {
     }
 }
 
-//fun View.disableUI() {
-//    this.apply {
-//        alpha = DS.dimen.disable.toFloat()
-//    }
-//}
-//fun View.enableUI() {
-//    this.apply {
-//        alpha = 1f
-//    }
-//}
+fun View.applyStroke(
+    strokeWidth: Int,
+    strokeColor: Int,
+    backgroundColor: Int = Color.TRANSPARENT,
+    cornerRadius: Int = 0
+) {
+    val drawable = GradientDrawable().apply {
+        setColor(backgroundColor)
+        setStroke(strokeWidth, strokeColor)
+        this.cornerRadius = cornerRadius.toFloat()
+    }
+    background = drawable
+}
