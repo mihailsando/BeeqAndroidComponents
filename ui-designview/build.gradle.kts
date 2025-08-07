@@ -56,32 +56,27 @@ androidComponents {
     }
 }
 
+val moduleVersion = project.findProperty("UI_DESIGNVIEW_VERSION")?.toString() ?: "1.0.0"
+val outputName = project.findProperty("BINDVIEW_EQ_FILENAME")?.toString() ?: "DS_android_bindviews"
+val baseGroup = "com.endava"
+val componentName = "eqRelease"
+
+val flavors = listOf(
+    "endava" to "endavaRelease",
+    "eq" to "eqRelease",
+    "default" to "defaultRelease"
+)
+
+
 afterEvaluate {
     publishing {
         publications {
-            components.findByName("endavaRelease")?.let {
-                create<MavenPublication>("endavaRelease") {
+            components.findByName(componentName)?.let {
+                create<MavenPublication>("bindviewEqRelease") {
                     from(it)
-                    groupId = "com.endava"
-                    artifactId = "beeq-bindview-endava"
-                    version = "1.0.0"
-                }
-            }
-            components.findByName("eqRelease")?.let {
-                create<MavenPublication>("eqRelease") {
-                    from(it)
-                    groupId = "com.endava"
-                    artifactId = "beeq-bindview-eq"
-                    version = "1.0.0"
-                }
-            }
-
-            components.findByName("defaultBrandRelease")?.let {
-                create<MavenPublication>("defaultRelease") {
-                    from(it)
-                    groupId = "com.endava"
-                    artifactId = "beeq-bindview-default"
-                    version = "1.0.0"
+                    groupId = baseGroup
+                    artifactId = outputName
+                    version = moduleVersion
                 }
             }
         }
@@ -91,6 +86,63 @@ afterEvaluate {
         }
     }
 }
+
+fun openFolderCrossPlatform(folder: File) {
+    if (!folder.exists()) {
+        println("Folder does not exist: ${folder.absolutePath}")
+        return
+    }
+
+    val os = System.getProperty("os.name").lowercase()
+
+    try {
+        when {
+            os.contains("win") -> ProcessBuilder("explorer", folder.absolutePath).start()
+            os.contains("mac") -> ProcessBuilder("open", folder.absolutePath).start()
+            os.contains("nux") || os.contains("nix") -> ProcessBuilder("xdg-open", folder.absolutePath).start()
+            else -> println("Unsupported OS: $os")
+        }
+    } catch (e: Exception) {
+        println("Failed to open folder: ${e.message}")
+    }
+}
+
+tasks.register("renameBindviewAar") {
+    group = "publishing"
+    description = "Rename AAR to custom name: $outputName-eq-$moduleVersion.aar"
+
+    dependsOn("assembleEqRelease")
+
+    doLast {
+        val outputDir = buildDir.resolve("outputs/aar")
+        val original = outputDir.listFiles()?.firstOrNull { it.name.endsWith("-eq-release.aar") }
+        val renamed = outputDir.resolve("$outputName-eq-$moduleVersion.aar")
+
+        if (original != null && original.exists()) {
+            original.renameTo(renamed)
+            println("Renamed to: ${renamed.name}")
+        } else {
+            println("Could not find original .aar to rename.")
+        }
+    }
+}
+
+afterEvaluate {
+    tasks.register("publishBindviewAarLocally") {
+        group = "publishing"
+        description = "Build, rename and publish bindview .aar to mavenLocal and open folder"
+
+        dependsOn("renameBindviewAar")
+        dependsOn("publishBindviewEqReleasePublicationToMavenLocal")
+
+        doLast {
+            val aarFolder = buildDir.resolve("outputs/aar")
+            println("Opening AAR folder: ${aarFolder.absolutePath}")
+            openFolderCrossPlatform(aarFolder)
+        }
+    }
+}
+
 
 dependencies {
 
