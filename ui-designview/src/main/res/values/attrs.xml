@@ -6,14 +6,49 @@
         <attr name="withSettings" format="boolean"/>
         <attr name="initiallyExpanded" format="boolean"/>
         <attr name="enabled" format="boolean"/>
-        <attr name="type" format="enum">
+        <attr name="accordionType" format="enum">
             <enum name="filled" value="0"/>
             <enum name="ghost" value="1"/>
         </attr>
-        <attr name="size" format="enum">
+        <attr name="accordionSize" format="enum">
             <enum name="medium" value="0"/>
             <enum name="small" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="AvatarView">
+        <attr name="avatarSrc" format="reference|string"/>
+        <attr name="avatarInitials" format="reference|string"/>
+        <attr name="avatarType" format="enum">
+            <enum name="image" value="0"/>
+            <enum name="text" value="1"/>
+        </attr>
+        <attr name="avatarShape" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="square" value="1"/>
+        </attr>
+        <attr name="avatarSize" format="enum">
+            <enum name="XS" value="0"/>
+            <enum name="S" value="1"/>
+            <enum name="M" value="2"/>
+            <enum name="L" value="3"/>
+        </attr>
+        <attr name="showDot" format="boolean"/>
+        <attr name="dotText" format="string"/>
+        <attr name="dotColor" format="color"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="BadgeView">
+        <attr name="badgeColor" format="color"/>
+        <attr name="badgeSize" format="enum">
+            <enum name="S" value="1"/>
+            <enum name="M" value="2"/>
+            <enum name="L" value="3"/>
+        </attr>
+        <attr name="badgeText" format="string"/>
+    </declare-styleable>
+
+
 
 </resources>

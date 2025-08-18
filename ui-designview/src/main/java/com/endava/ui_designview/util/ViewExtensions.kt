@@ -83,6 +83,14 @@ fun View.enableUI() {
     }
 }
 
+fun Int.getIntDimen(resources: Resources): Int =
+    resources.getDimension(this).toInt()
+
+
+fun Int.getFloatDimen(resources: Resources): Float =
+    resources.getDimension(this)
+
+
 fun View.applyStroke(
     strokeWidth: Int,
     strokeColor: Int,
@@ -92,7 +100,14 @@ fun View.applyStroke(
     val drawable = GradientDrawable().apply {
         setColor(backgroundColor)
         setStroke(strokeWidth, strokeColor)
-        this.cornerRadius = cornerRadius.toFloat()
+
+        val radii = floatArrayOf(
+            cornerRadius.toFloat(), cornerRadius.toFloat(),
+            cornerRadius.toFloat(), cornerRadius.toFloat(),
+            cornerRadius.toFloat(), cornerRadius.toFloat(),
+            cornerRadius.toFloat(), cornerRadius.toFloat()
+        )
+        this.cornerRadii = radii
     }
     background = drawable
 }

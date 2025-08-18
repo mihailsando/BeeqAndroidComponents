@@ -1,8 +1,8 @@
 package com.endava.ui_designview.models.accordion
 
-import com.endava.design_tokens.R as DS
 import android.content.res.Resources
-import com.endava.ui_designview.util.toDp
+import com.endava.ui_designview.util.getIntDimen
+import com.endava.design_tokens.R as DS
 
 enum class AccordionSize {
     SMALL, MEDIUM;
@@ -22,8 +22,8 @@ enum class AccordionSize {
     }
 
     fun getRadius(resources: Resources) = when(this) {
-        SMALL -> resources.getDimension(DS.dimen.accordion_small_radius).toInt()
-        MEDIUM -> resources.getDimension(DS.dimen.accordion_medium_radius).toInt()
+        SMALL -> DS.dimen.accordion_small_radius.getIntDimen(resources)
+        MEDIUM -> DS.dimen.accordion_medium_radius.getIntDimen(resources)
     }
 
 

@@ -23,7 +23,7 @@ import com.endava.ui_designview.util.enableUI
 
 class AccordionView @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet,
+    attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
@@ -73,8 +73,8 @@ class AccordionView @JvmOverloads constructor(
             val title = attributes.getString(R.styleable.AccordionView_title) ?: ""
             val withSettings = attributes.getBoolean(R.styleable.AccordionView_withSettings, false)
             val startIcon = attributes.getDrawable(R.styleable.AccordionView_startIcon)
-            val type = AccordionType.getType(attributes.getInt(R.styleable.AccordionView_type, 0))
-            val size = AccordionSize.getSize(attributes.getInt(R.styleable.AccordionView_size, 0))
+            val type = AccordionType.getType(attributes.getInt(R.styleable.AccordionView_accordionType, 0))
+            val size = AccordionSize.getSize(attributes.getInt(R.styleable.AccordionView_accordionSize, 0))
 
             applySizeAndType(size, type)
 

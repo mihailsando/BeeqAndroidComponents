@@ -8,34 +8,94 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <com.endava.ui_designview.components.AccordionView
-            android:layout_width="match_parent"
+        <!-- Avatar S - text - circle - 2 green dots -->
+        <com.endava.ui_designview.components.AvatarView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:initiallyExpanded="true"
-            app:startIcon="@drawable/info"
-            app:title="TEST accordion"
-            app:type="filled"
-            app:size="medium"
-            app:enabled="true"
-            app:withSettings="true"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This is the accordion content." />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This is the accordion content." />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This is the accordion content." />
-        </com.endava.ui_designview.components.AccordionView>
+            app:avatarType="image"
+            app:avatarSrc="https://i.pravatar.cc/150?img=10"
+            app:avatarInitials="MS"
+            app:avatarShape="circle"
+            app:avatarSize="L"
+            app:showDot="true"
+            app:dotText="2" />
+
+        <com.endava.ui_designview.components.AvatarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:avatarType="image"
+            app:avatarSrc="https://i.pravatar.cc/150?img=10"
+            app:avatarInitials="MS"
+            app:avatarShape="circle"
+            app:avatarSize="M"
+            app:showDot="true"
+            app:dotText="2" />
+
+        <com.endava.ui_designview.components.AvatarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:avatarType="image"
+            app:avatarSrc="https://i.pravatar.cc/150?img=10"
+            app:avatarInitials="MS"
+            app:avatarShape="circle"
+            app:avatarSize="S"
+            app:showDot="true"
+            app:dotText="2" />
+
+        <com.endava.ui_designview.components.AvatarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:avatarType="image"
+            app:avatarSrc="https://i.pravatar.cc/150?img=10"
+            app:avatarInitials="MS"
+            app:avatarShape="circle"
+            app:avatarSize="XS"
+            app:showDot="true"
+            app:dotText="2" />
+
+        <com.endava.ui_designview.components.AvatarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:avatarType="image"
+            app:avatarSrc="https://i.pravatar.cc/150?img=10"
+            app:avatarInitials="MS"
+            app:avatarShape="circle"
+            app:avatarSize="XS"
+            app:showDot="true"
+            app:dotText="2" />
+
+<!--        <com.endava.ui_designview.components.AccordionView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:initiallyExpanded="true"-->
+<!--            app:startIcon="@drawable/info"-->
+<!--            app:title="TEST accordion"-->
+<!--            app:type="filled"-->
+<!--            app:size="medium"-->
+<!--            app:enabled="true"-->
+<!--            app:withSettings="true"-->
+<!--            >-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="This is the accordion content." />-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="This is the accordion content." />-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="This is the accordion content." />-->
+<!--        </com.endava.ui_designview.components.AccordionView>-->
 
 
     </LinearLayout>
