@@ -7,14 +7,11 @@ import android.util.TypedValue
 import android.view.Gravity
 import coil.size.Dimension
 import com.endava.ui_designview.R
+import com.endava.ui_designview.models.avatar.BadgeSize
 import com.endava.ui_designview.theme.designColors
 import com.endava.ui_designview.util.applyBackGroundWithRadius
 import com.endava.ui_designview.util.getIntDimen
 import com.endava.design_tokens.R as DS
-
-enum class BadgeSize{
-    Small, Medium, Large;
-}
 
 class BadgeView @JvmOverloads constructor(
     context: Context,
