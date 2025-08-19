@@ -41,13 +41,13 @@ android {
     }
 }
 
-androidComponents {
-    beforeVariants { variant ->
-        if (variant.buildType == "debug") {
-            variant.enable = false
-        }
-    }
-}
+//androidComponents {
+//    beforeVariants { variant ->
+//        if (variant.buildType == "debug") {
+//            variant.enable = false
+//        }
+//    }
+//}
 
 // Read version and base name from gradle.properties
 val moduleVersion = (findProperty("UI_DESIGNVIEW_VERSION") as String?) ?: "1.0.0"

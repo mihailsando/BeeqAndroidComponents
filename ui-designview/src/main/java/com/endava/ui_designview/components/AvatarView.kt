@@ -14,6 +14,7 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.endava.ui_designview.R
 import com.endava.ui_designview.models.avatar.AvatarModel
+import com.endava.ui_designview.models.avatar.BadgeSize
 import com.endava.ui_designview.theme.designColors
 import com.endava.ui_designview.util.addMargin
 import com.endava.ui_designview.util.applyStroke
@@ -101,26 +102,7 @@ class AvatarView @JvmOverloads constructor(
             when (typedValue.type) {
                 TypedValue.TYPE_STRING -> {
                     val url = getString(R.styleable.AvatarView_avatarSrc)
-                    if (!url.isNullOrEmpty()) {
-                        avatarImage.load(url) {
-                            crossfade(true)
-                            transformations(
-                                RoundedCornersTransformation(model.getRadius(resources).toFloat()),
-                            )
-                            listener(
-                                onSuccess = { _, _ ->
-                                    avatarImage.visibility = VISIBLE
-                                    avatarText.visibility = GONE
-                                },
-                                onError = { _, error ->
-                                    showTextFallback()
-                                    Log.d("AVATAR_VIEW loadImg: " , error.throwable.message ?: "NU STIU" )
-                                }
-                            )
-                        }
-                    } else {
-                        showTextFallback()
-                    }
+                    setImageUrl(url)
                 }
 
                 TypedValue.TYPE_REFERENCE -> {
@@ -164,6 +146,29 @@ class AvatarView @JvmOverloads constructor(
             strokeColor = context.designColors.stroke.tertiary,
             cornerRadius = radius
         )
+    }
+
+    fun setImageUrl (url: String?) {
+        if (!url.isNullOrEmpty()) {
+            avatarImage.load(url) {
+                crossfade(true)
+                transformations(
+                    RoundedCornersTransformation(model.getRadius(resources).toFloat()),
+                )
+                listener(
+                    onSuccess = { _, _ ->
+                        avatarImage.visibility = VISIBLE
+                        avatarText.visibility = GONE
+                    },
+                    onError = { _, error ->
+                        showTextFallback()
+                        Log.d("AVATAR_VIEW loadImg: " , error.throwable.message ?: "NU STIU" )
+                    }
+                )
+            }
+        } else {
+            showTextFallback()
+        }
     }
 
 //    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
