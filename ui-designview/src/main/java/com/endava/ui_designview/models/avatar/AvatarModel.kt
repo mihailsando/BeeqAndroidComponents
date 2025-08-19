@@ -33,7 +33,7 @@ data class AvatarModel(
             // S
             1 -> DS.dimen.avatar_border_radius_square_S.getIntDimen(resources)
             // L
-            3 -> DS.dimen.avatar_border_radius_square_L.getIntDimen(resources)
+            3 -> DS.dimen.avatar_border_radius_square_M.getIntDimen(resources)
             // M
             else -> DS.dimen.avatar_border_radius_square_M.getIntDimen(resources)
         }

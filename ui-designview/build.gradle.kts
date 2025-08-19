@@ -26,17 +26,10 @@ android {
     }
 
     flavorDimensions += "branding"
-
     productFlavors {
-        create("endava") {
-            dimension = "branding"
-        }
-        create("eq") {
-            dimension = "branding"
-        }
-        create("default") {
-            dimension = "branding"
-        }
+        create("endava")  { dimension = "branding" }
+        create("eq")      { dimension = "branding" }
+        create("default") { dimension = "branding" }
     }
 
     compileOptions {
@@ -49,100 +42,69 @@ android {
 }
 
 androidComponents {
-    beforeVariants {
-        it.flavorName?.let {flavor ->
-            it.enable = flavor in listOf("endava", "eq", "default")
+    beforeVariants { variant ->
+        if (variant.buildType == "debug") {
+            variant.enable = false
         }
     }
 }
 
-val moduleVersion = project.findProperty("UI_DESIGNVIEW_VERSION")?.toString() ?: "1.0.0"
-val outputName = project.findProperty("BINDVIEW_EQ_FILENAME")?.toString() ?: "DS_android_bindviews"
-val baseGroup = "com.endava"
-val componentName = "eqRelease"
+// Read version and base name from gradle.properties
+val moduleVersion = (findProperty("UI_DESIGNVIEW_VERSION") as String?) ?: "1.0.0"
+val outputBase   = (findProperty("BINDVIEW_NAME") as String?) ?: "ui-designview"
 
-val flavors = listOf(
-    "endava" to "endavaRelease",
-    "eq" to "eqRelease",
-    "default" to "defaultRelease"
-)
-
-
+// Optional: publish per-flavor
 afterEvaluate {
     publishing {
         publications {
-            components.findByName(componentName)?.let {
-                create<MavenPublication>("bindviewEqRelease") {
+            components.findByName("endavaRelease")?.let {
+                create<MavenPublication>("uiDesignviewEndavaRelease") {
                     from(it)
-                    groupId = baseGroup
-                    artifactId = outputName
+                    groupId = "com.endava"
+                    artifactId = "${outputBase}-endava"
+                    version = moduleVersion
+                }
+            }
+            components.findByName("eqRelease")?.let {
+                create<MavenPublication>("uiDesignviewEqRelease") {
+                    from(it)
+                    groupId = "com.endava"
+                    artifactId = "${outputBase}-eq"
+                    version = moduleVersion
+                }
+            }
+            components.findByName("defaultRelease")?.let {
+                create<MavenPublication>("uiDesignviewDefaultRelease") {
+                    from(it)
+                    groupId = "com.endava"
+                    artifactId = "${outputBase}-default"
                     version = moduleVersion
                 }
             }
         }
-
-        repositories {
-            mavenLocal()
-        }
+        repositories { mavenLocal() }
     }
 }
 
-fun openFolderCrossPlatform(folder: File) {
-    if (!folder.exists()) {
-        println("Folder does not exist: ${folder.absolutePath}")
-        return
-    }
-
-    val os = System.getProperty("os.name").lowercase()
-
-    try {
-        when {
-            os.contains("win") -> ProcessBuilder("explorer", folder.absolutePath).start()
-            os.contains("mac") -> ProcessBuilder("open", folder.absolutePath).start()
-            os.contains("nux") || os.contains("nix") -> ProcessBuilder("xdg-open", folder.absolutePath).start()
-            else -> println("Unsupported OS: $os")
-        }
-    } catch (e: Exception) {
-        println("Failed to open folder: ${e.message}")
-    }
-}
-
-tasks.register("renameBindviewAar") {
+tasks.register("renameDesignviewAars") {
     group = "publishing"
-    description = "Rename AAR to custom name: $outputName-eq-$moduleVersion.aar"
-
-    dependsOn("assembleEqRelease")
+    description = "Rename ui-designview AARs to include version"
+    dependsOn("assembleEndavaRelease", "assembleEqRelease", "assembleDefaultRelease")
 
     doLast {
-        val outputDir = buildDir.resolve("outputs/aar")
-        val original = outputDir.listFiles()?.firstOrNull { it.name.endsWith("-eq-release.aar") }
-        val renamed = outputDir.resolve("$outputName-eq-$moduleVersion.aar")
-
-        if (original != null && original.exists()) {
-            original.renameTo(renamed)
-            println("Renamed to: ${renamed.name}")
-        } else {
-            println("Could not find original .aar to rename.")
+        val out = buildDir.resolve("outputs/aar")
+        listOf("endava", "eq", "default").forEach { flavor ->
+            val orig = out.resolve("$outputBase-$flavor-release.aar")
+            val dest = out.resolve("$outputBase-$flavor-$moduleVersion.aar")
+            if (orig.exists()) {
+                orig.renameTo(dest)
+                println("Renamed: ${dest.name}")
+            } else {
+                println("Not found: ${orig.name}")
+            }
         }
     }
 }
-
-afterEvaluate {
-    tasks.register("publishBindviewAarLocally") {
-        group = "publishing"
-        description = "Build, rename and publish bindview .aar to mavenLocal and open folder"
-
-        dependsOn("renameBindviewAar")
-        dependsOn("publishBindviewEqReleasePublicationToMavenLocal")
-
-        doLast {
-            val aarFolder = buildDir.resolve("outputs/aar")
-            println("Opening AAR folder: ${aarFolder.absolutePath}")
-            openFolderCrossPlatform(aarFolder)
-        }
-    }
-}
-
 
 dependencies {
 

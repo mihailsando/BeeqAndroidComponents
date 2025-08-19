@@ -50,6 +50,12 @@ android {
             dimension = "branding"
         }
     }
+    buildTypes {
+        getByName("debug") {
+            matchingFallbacks += listOf("release")
+        }
+        // getByName("release") { ... }
+    }
 }
 
 dependencies {
