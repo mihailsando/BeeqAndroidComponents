@@ -1,23 +1,23 @@
-package com.endava.ui_designview.components
+package com.endava.ui_designview.badgeComponent
 
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.Gravity
+import androidx.appcompat.widget.AppCompatTextView
 import coil.size.Dimension
 import com.endava.ui_designview.R
 import com.endava.ui_designview.models.avatar.BadgeSize
 import com.endava.ui_designview.theme.designColors
 import com.endava.ui_designview.util.applyBackGroundWithRadius
 import com.endava.ui_designview.util.getIntDimen
-import com.endava.design_tokens.R as DS
 
-class BadgeView @JvmOverloads constructor(
+public class BadgeView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : androidx.appcompat.widget.AppCompatTextView(context, attrs, defStyleAttr) {
+) : AppCompatTextView(context, attrs, defStyleAttr) {
 
     private var badgeColor: Int = context.designColors.ui.danger
     private var badgeSize: Int = 2 // M by default
@@ -49,9 +49,9 @@ class BadgeView @JvmOverloads constructor(
 
     fun setSize(size: BadgeSize) {
         val height = when (size) {
-            BadgeSize.Small -> DS.dimen.S.getIntDimen(resources)
-            BadgeSize.Medium-> DS.dimen.M.getIntDimen(resources)
-            BadgeSize.Large-> DS.dimen.L.getIntDimen(resources)
+            BadgeSize.Small -> com.endava.design_tokens.R.dimen.S.getIntDimen(resources)
+            BadgeSize.Medium-> com.endava.design_tokens.R.dimen.M.getIntDimen(resources)
+            BadgeSize.Large-> com.endava.design_tokens.R.dimen.L.getIntDimen(resources)
         }
 
         val verticalPadding = if (text.length < 3) Dimension(1).px else Dimension(4).px

@@ -13,7 +13,7 @@
         android:padding="16dp">
 
         <!-- Avatar S - text - circle - 2 green dots -->
-        <com.endava.ui_designview.components.AvatarView
+        <com.endava.ui_designview.avatar.AvatarView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:avatarType="image"
@@ -24,19 +24,19 @@
             app:showDot="true"
             app:dotText="2" />
 
-        <com.endava.ui_designview.components.AvatarView
+        <com.endava.ui_designview.avatar.AvatarView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             app:avatarType="image"
-            app:avatarSrc="https://i.pravatar.cc/150?img=10"
+            app:avatarSrc="https://randomuser.me/api/portraits/men/75.jpg"
             app:avatarInitials="MS"
-            app:avatarShape="circle"
+            app:avatarShape="square"
             app:avatarSize="M"
             app:showDot="true"
             app:dotText="2" />
 
-        <com.endava.ui_designview.components.AvatarView
+        <com.endava.ui_designview.avatar.AvatarView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -48,7 +48,7 @@
             app:showDot="true"
             app:dotText="2" />
 
-        <com.endava.ui_designview.components.AvatarView
+        <com.endava.ui_designview.avatar.AvatarView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -60,7 +60,7 @@
             app:showDot="true"
             app:dotText="2" />
 
-        <com.endava.ui_designview.components.AvatarView
+        <com.endava.ui_designview.avatar.AvatarView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"

@@ -5,8 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.endava.ui_designview.components.AccordionView
+import com.endava.ui_designview.accordion.AccordionView
 
 
 import com.endava.app_view.databinding.FragmentFirstBinding
